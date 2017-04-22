@@ -108,7 +108,7 @@ extension PrivateFazendinhaNumberProtocol {
                 }
 
                 maskedNumber = number
-                parts = partsOfNumber(number: maskedNumber, characterSetToSkip: decimalDigitsCharSet.inverted)
+                parts = partsOfNumber(number: maskedNumber, characterSetToSkip: decimalDigitsCharSet)
             }
 
             func validateMaskedChars() throws {

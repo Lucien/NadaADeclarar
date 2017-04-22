@@ -1,14 +1,14 @@
 import Foundation
 
-public struct CPF: PrivateFazendinhaNumberProtocol {
+public struct CPF: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
     typealias T = CPF
 
-    public let number: String
-    public let plainNumber: String
-    public let maskedNumber: String
-    public let checkDigits: [Int]
+    let plainNumber: String
+    let maskedNumber: String
+    let checkDigits: [Int]
     static let checkDigitsCount = 2
     static let numberLength = 11
+    let number: String
 
     /**
      Creates a CPF from a given number

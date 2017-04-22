@@ -1,15 +1,15 @@
 import Foundation
 
-public struct CNPJ: PrivateFazendinhaNumberProtocol {
+public struct CNPJ: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
     typealias T = CNPJ
 
-    public let number: String
-    public let plainNumber: String
-    public let maskedNumber: String
-    public let checkDigits: [Int]
+    let plainNumber: String
+    let maskedNumber: String
+    let checkDigits: [Int]
     static let checkDigitsCount = 2
     static let numberLength = 14
     public let isHeadquarters: Bool
+    let number: String
 
     public init(number: String) throws {
 
