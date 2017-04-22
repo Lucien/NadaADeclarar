@@ -1,11 +1,3 @@
-//
-//  fazendinha.h
-//  fazendinha
-//
-//  Created by Lucien on 10/03/17.
-//
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for fazendinha.
