@@ -9,7 +9,11 @@ public enum ValidationAlgorythm {
     case fazenda
 }
 
-protocol FazendinhaNumberProtocol {
+public protocol FazendinhaNumberProtocol {
+    init(number: String) throws
+}
+
+protocol PrivateFazendinhaNumberProtocol: FazendinhaNumberProtocol {
 
     static var numberLength: Int { get }
     static var checkDigitsCount: Int { get }
@@ -18,29 +22,42 @@ protocol FazendinhaNumberProtocol {
     var plainNumber: String { get }
     var maskedNumber: String { get }
 
-    init(number: String) throws
-
     func isValid(validationAlgorythm: ValidationAlgorythm, allSameDigitsAreValid: Bool) -> Bool
-
-    static func validateNumberInput(number: String,
-                                    separators: [Character],
-                                    steps: [Int]) throws ->
-        (plainNumber: String, maskedNumber: String, checkDigits: [Int])
-
-    static func partsOfNumber(number: String, characterSetToSkip: CharacterSet) -> [String]
+    static func generate() -> Self
 
     func calculateWeightsSum(basicNumber: String) -> Int
-    func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
-                           substringRange: Range<String.Index>,
-                           basicNumber: String) -> (number: Int, index: Int)
-
-
-    func validateUsingSimpleAlgorythm() -> Bool
-    func validateUsingFazendaAlgorythm() -> Bool
-
+    static func calcWeightSum(basicNumber: String) -> Int
 }
 
-extension FazendinhaNumberProtocol {
+extension PrivateFazendinhaNumberProtocol {
+
+    public static func generate() -> Self {
+
+        let basicNumber = generateBasicNumber()
+        let checkDigits = expectedCheckDigits(fromBasicNumber: basicNumber)
+
+        var number = basicNumber
+        for checkDigit in checkDigits {
+            number.append(String(checkDigit))
+        }
+
+        do {
+            let fazendinhaType = try Self(number: number)
+            return fazendinhaType
+        } catch {
+            fatalError("Could not create CPF from number: \(number)")
+        }
+    }
+
+    static func generateBasicNumber() -> String {
+        let basicNumberLength = numberLength - checkDigitsCount
+        var randomNumber = ""
+        for _ in 0 ..< basicNumberLength {
+            randomNumber += String(arc4random() % 10)
+        }
+
+        return randomNumber
+    }
 
     public func isValid(validationAlgorythm: ValidationAlgorythm = .fazenda,
                         allSameDigitsAreValid: Bool = false) -> Bool {
@@ -63,30 +80,35 @@ extension FazendinhaNumberProtocol {
     static func validateNumberInput(number: String,
                                     separators: [Character],
                                     steps: [Int]) throws ->
-        (plainNumber: String, maskedNumber: String, checkDigits: [Int]) {
+        (plainNumber: String, maskedNumber: String, checkDigits: [Int], parts: [String]) {
 
             var plainNumber: String = number
             var maskedNumber: String = number
+            var parts = [String]()
             let decimalDigitsCharSet = CharacterSet.decimalDigits
 
             func validatePlainChars() throws {
 
-                let parts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet.inverted)
+                let plainParts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet.inverted)
 
-                guard var part = parts.first,
-                    part.characters.count == CPF.numberLength,
-                    part == number else {
+                guard var number = plainParts.first,
+                    number.characters.count == numberLength,
+                    number == number else {
                         throw InputError.invalidFormat
                 }
 
                 var offset = 0
                 for i in 0..<separators.count {
+
                     offset += steps[i] + (i == 0 ? 0 : 1)
                     let separator = separators[i]
-                    part.insert(separator, at: part.index(part.startIndex, offsetBy: offset))
+
+                    let location = number.index(number.startIndex, offsetBy: offset)
+                    number.insert(separator, at: location)
                 }
 
-                maskedNumber = part
+                maskedNumber = number
+                parts = partsOfNumber(number: maskedNumber, characterSetToSkip: decimalDigitsCharSet.inverted)
             }
 
             func validateMaskedChars() throws {
@@ -140,7 +162,7 @@ extension FazendinhaNumberProtocol {
                 checkDigits.append(Int(String(char))!)
             }
 
-            return (plainNumber, maskedNumber, checkDigits)
+            return (plainNumber, maskedNumber, checkDigits, parts)
     }
 
     static func partsOfNumber(number: String, characterSetToSkip: CharacterSet) -> [String] {
@@ -161,10 +183,13 @@ extension FazendinhaNumberProtocol {
 
     public func validateUsingSimpleAlgorythm() -> Bool {
 
-        let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -2)
+
+        let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -Self.checkDigitsCount)
         let range = Range(uncheckedBounds: (plainNumber.startIndex, upper: upperBound))
+        let basicNumberLength = plainNumber.characters.count - Self.checkDigitsCount
 
         var v1 = 0
+        let moduloNumber = 11
         var v2 = 0
         var index = 0
 
@@ -176,27 +201,26 @@ extension FazendinhaNumberProtocol {
                                             stop: inout Bool) in
 
                                             let number = Int(enumeratedString!)!
-                                            v1 += number * (9 - index)
-                                            v2 += number * (9 - (index + 1))
+                                            v1 += number * (basicNumberLength - index)
+                                            v2 += number * (basicNumberLength - (index + 1))
                                             index += 1
         }
 
-        v1 = v1 % plainNumber.characters.count % 10
-        v2 += v1 * 9
-        v2 = v2 % plainNumber.characters.count % 10
-        
+        v1 = v1 % moduloNumber % (moduloNumber-1)
+        v2 += v1 * basicNumberLength
+        v2 = v2 % moduloNumber % (moduloNumber-1)
+
         return checkDigits == [v1, v2]
     }
 
     public func validateUsingFazendaAlgorythm() -> Bool {
 
-        let checkDigits = self.checkDigits
-
         let checkDigitsCount = checkDigits.count
 
         let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -checkDigitsCount)
-        let basicNumber = plainNumber.substring(to: upperBound)
 
+        let basicNumber = plainNumber.substring(to: upperBound)
+        let moduloNumber = 11
 
         var expectedCheckDigits = [Int]()
         var nextBasicNumber = basicNumber
@@ -204,8 +228,8 @@ extension FazendinhaNumberProtocol {
         for i in 0..<checkDigitsCount {
 
             let sum = calculateWeightsSum(basicNumber: nextBasicNumber)
-            let remainder = sum % plainNumber.characters.count
-            let v = (remainder == 1 || remainder == 0) ? 0 : plainNumber.characters.count - remainder
+            let remainder = sum % moduloNumber
+            let v = (remainder == 1 || remainder == 0) ? 0 : moduloNumber - remainder
             nextBasicNumber.append(String(v))
             expectedCheckDigits.insert(v, at: i)
         }
@@ -213,9 +237,26 @@ extension FazendinhaNumberProtocol {
         return checkDigits == expectedCheckDigits
     }
 
-    func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
-                           substringRange: Range<String.Index>,
-                           basicNumber: String) -> (number: Int, index: Int) {
+    static func expectedCheckDigits(fromBasicNumber basicNumber: String) -> [Int] {
+
+        let moduloNumber = 11
+        var expectedCheckDigits = [Int]()
+        var nextBasicNumber = basicNumber
+
+        for i in 0..<checkDigitsCount {
+
+            let sum = calcWeightSum(basicNumber: nextBasicNumber)
+            let remainder = sum % moduloNumber
+            let v = (remainder == 1 || remainder == 0) ? 0 : moduloNumber - remainder
+            nextBasicNumber.append(String(v))
+            expectedCheckDigits.insert(v, at: i)
+        }
+        return expectedCheckDigits
+    }
+
+    static func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
+                                  substringRange: Range<String.Index>,
+                                  basicNumber: String) -> (number: Int, index: Int) {
 
         let number = Int(enumeratedString!)!
         let index: Int = basicNumber.distance(from: basicNumber.startIndex,

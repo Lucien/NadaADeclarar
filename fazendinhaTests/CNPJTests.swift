@@ -1,20 +1,25 @@
 import XCTest
 import fazendinha
 
-class CNPJTests: XCTestCase {
-    
+class CNPJTests: XCTestCase, ListImporter {
+
+    var cnpjList: [CNPJ]!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.cnpjList = CNPJTests.generatedNumberList()
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testValidCNPJ() {
 
-//        XCTAssertTrue(try! CNPJ(number: "57.813.271/0002-64").isVali)
+    func testValidCNPJ() throws {
+        for cnpj in self.cnpjList {
+            XCTAssertTrue(cnpj.isValid())
+        }
+    }
+
+    func testGenerateCNPJ() {
+
+        for _ in 0...1000 {
+            XCTAssertTrue(CNPJ.generate().isValid())
+        }
     }
 }

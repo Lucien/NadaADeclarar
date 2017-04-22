@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF24C95C1EAB2E2E00522CAE /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF24C95B1EAB2E2E00522CAE /* GeneratedCPFList.txt */; };
+		DF24C95E1EAB9D7300522CAE /* GeneratedCNPJList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF24C95D1EAB9D7300522CAE /* GeneratedCNPJList.txt */; };
+		DF24C9601EAB9DC200522CAE /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF24C95F1EAB9DC200522CAE /* ListImporter.swift */; };
 		DF26A5D01EAA8A3B00A1E86B /* CNPJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26A5CF1EAA8A3B00A1E86B /* CNPJTests.swift */; };
 		DF55E5471E73905B0065DA1A /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DF55E5391E73905B0065DA1A /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF55E54F1E7390960065DA1A /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF55E54E1E7390960065DA1A /* CPF.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF24C95B1EAB2E2E00522CAE /* GeneratedCPFList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCPFList.txt; sourceTree = "<group>"; };
+		DF24C95D1EAB9D7300522CAE /* GeneratedCNPJList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCNPJList.txt; sourceTree = "<group>"; };
+		DF24C95F1EAB9DC200522CAE /* ListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImporter.swift; sourceTree = "<group>"; };
 		DF26A5CF1EAA8A3B00A1E86B /* CNPJTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPJTests.swift; sourceTree = "<group>"; };
 		DF55E5361E73905B0065DA1A /* fazendinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF55E5391E73905B0065DA1A /* fazendinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fazendinha.h; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				DFE8309A1EA3D58F009F3DAD /* StateTests.swift */,
 				DFFC048D1EA4151D00C21DF7 /* FiscalRegionTests.swift */,
 				DFE830921EA3D563009F3DAD /* Info.plist */,
+				DF24C95B1EAB2E2E00522CAE /* GeneratedCPFList.txt */,
+				DF24C95D1EAB9D7300522CAE /* GeneratedCNPJList.txt */,
+				DF24C95F1EAB9DC200522CAE /* ListImporter.swift */,
 			);
 			path = fazendinhaTests;
 			sourceTree = "<group>";
@@ -215,6 +224,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF24C95C1EAB2E2E00522CAE /* GeneratedCPFList.txt in Resources */,
+				DF24C95E1EAB9D7300522CAE /* GeneratedCNPJList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +251,7 @@
 			files = (
 				DF26A5D01EAA8A3B00A1E86B /* CNPJTests.swift in Sources */,
 				DFE8309C1EA3D58F009F3DAD /* StateTests.swift in Sources */,
+				DF24C9601EAB9DC200522CAE /* ListImporter.swift in Sources */,
 				DFFC048E1EA4151D00C21DF7 /* FiscalRegionTests.swift in Sources */,
 				DFE8309B1EA3D58F009F3DAD /* CPFTests.swift in Sources */,
 			);

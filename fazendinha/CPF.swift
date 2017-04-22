@@ -1,13 +1,14 @@
 import Foundation
 
-public struct CPF: FazendinhaNumberProtocol {
+public struct CPF: PrivateFazendinhaNumberProtocol {
+    typealias T = CPF
 
     public let number: String
     public let plainNumber: String
     public let maskedNumber: String
     public let checkDigits: [Int]
-    static let numberLength = 11
     static let checkDigitsCount = 2
+    static let numberLength = 11
 
     /**
      Creates a CPF from a given number
@@ -28,22 +29,11 @@ public struct CPF: FazendinhaNumberProtocol {
         self.checkDigits = inputValidation.checkDigits
     }
 
-    public var fiscalRegion: FiscalRegion {
-
-        let frRange = Range(uncheckedBounds: (plainNumber.index(plainNumber.endIndex, offsetBy: -3),
-                                              plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
-        let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
-        return fiscalRegion
-    }
-
-    public var states: [State] {
-
-        return 🇧🇷.states.filter { (state: State) -> Bool in
-            return state.fiscalRegion == fiscalRegion
-        }
-    }
-
     func calculateWeightsSum(basicNumber: String) -> Int {
+        return CPF.calcWeightSum(basicNumber: basicNumber)
+    }
+
+    static func calcWeightSum(basicNumber: String) -> Int {
 
         var sum = 0
         let range = Range(uncheckedBounds: (basicNumber.startIndex, upper: basicNumber.endIndex))
@@ -57,14 +47,29 @@ public struct CPF: FazendinhaNumberProtocol {
                                             enclosingRange: Range<String.Index>,
                                             stop: inout Bool) in
 
-                                            let info = self.getNumberAndIndex(fromEnumeratedString: enumeratedString,
-                                                                              substringRange: substringRange,
-                                                                              basicNumber: basicNumber)
+                                            let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
+                                                                         substringRange: substringRange,
+                                                                         basicNumber: basicNumber)
 
                                             let weight = (initialWeight - info.index)
                                             sum += info.number * weight
         }
 
         return sum
+    }
+
+    public var fiscalRegion: FiscalRegion {
+
+        let frRange = Range(uncheckedBounds: (plainNumber.index(plainNumber.endIndex, offsetBy: -3),
+                                              plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
+        let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
+        return fiscalRegion
+    }
+
+    public var states: [State] {
+
+        return 🇧🇷.states.filter { (state: State) -> Bool in
+            return state.fiscalRegion == fiscalRegion
+        }
     }
 }
