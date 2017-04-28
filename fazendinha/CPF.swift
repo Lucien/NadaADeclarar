@@ -8,6 +8,8 @@ public struct CPF: FazendinhaNumberProtocol {
     public let checkDigits: [Int]
     public static var checkDigitsCount: Int = 2
     public static var numberLength: Int = 11
+    let validator: Validator
+    let parser = Parser()
 
     /**
      Creates a CPF from a given number
@@ -19,12 +21,14 @@ public struct CPF: FazendinhaNumberProtocol {
      */
     public init(number: String) throws {
 
-        let inputValidation = try CPF.validateNumberInput(number: number,
-                                                          separators: [".", ".", "-"],
-                                                          steps: [3, 3, 3, 2])
-        self.plainNumber = inputValidation.plainNumber
-        self.maskedNumber = inputValidation.maskedNumber
-        self.checkDigits = inputValidation.checkDigits
+        let numberParsedInfo = try parser.parse(number: number,
+                                                separators: [".", ".", "-"],
+                                                steps: [3, 3, 3, 2])
+
+        self.plainNumber = numberParsedInfo.plainNumber
+        self.maskedNumber = numberParsedInfo.maskedNumber
+        self.checkDigits = numberParsedInfo.checkDigits
+        self.validator = Validator(numberParsedInfo: numberParsedInfo)
     }
 
     public var states: [State] {
@@ -34,19 +38,15 @@ public struct CPF: FazendinhaNumberProtocol {
         }
     }
 
-    public func isValid(validationAlgorythm: ValidationAlgorythm, allSameDigitsAreValid: Bool) -> Bool {
-
+    static let fazendaAlgorythm = ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+        return calcWeightSum(basicNumber: basicNumber)
     }
 
-//    public static func generate() -> CPF {
-//        return generate(basicNumberLength: 11, checkDigitsLength: 2)
-//    }
-}
+    public func isValid(validationAlgorythm: ValidationAlgorythm = CPF.fazendaAlgorythm,
+                        allSameDigitsAreValid: Bool = false) -> Bool {
 
-extension CPF: PrivateFazendinhaNumberProtocol {
-
-    func calculateWeightsSum(basicNumber: String) -> Int {
-        return CPF.calcWeightSum(basicNumber: basicNumber)
+        return validator.isValid(validationAlgorythm: validationAlgorythm,
+                                 allSameDigitsAreValid: allSameDigitsAreValid)
     }
 
     static func calcWeightSum(basicNumber: String) -> Int {
@@ -81,4 +81,9 @@ extension CPF: PrivateFazendinhaNumberProtocol {
         let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
         return fiscalRegion
     }
+
+//    public static func generate() -> CPF {
+//        return generate(basicNumberLength: 11, checkDigitsLength: 2)
+//    }
 }
+

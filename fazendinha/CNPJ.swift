@@ -1,49 +1,46 @@
 import Foundation
 
 public struct CNPJ: FazendinhaNumberProtocol {
+
     typealias T = CNPJ
 
     public let plainNumber: String
     public let maskedNumber: String
     public let checkDigits: [Int]
     public let isHeadquarters: Bool
+    let validator: Validator
+    let parser = Parser()
     public static let checkDigitsCount = 2
     public static let numberLength = 14
 
     public init(number: String) throws {
 
-        let inputValidation = try CNPJ.validateNumberInput(number: number,
-                                                           separators: [".", ".", "/", "-"],
-                                                           steps: [2, 3, 3, 4, 2])
-        self.plainNumber = inputValidation.plainNumber
-        self.maskedNumber = inputValidation.maskedNumber
-        self.checkDigits = inputValidation.checkDigits
+        let numberParsedInfo = try parser.parse(number: number,
+                                                separators: [".", ".", "/", "-"],
+                                                steps: [2, 3, 3, 4, 2])
 
-        let partsCount = inputValidation.parts.count
+        self.plainNumber = numberParsedInfo.plainNumber
+        self.maskedNumber = numberParsedInfo.maskedNumber
+        self.checkDigits = numberParsedInfo.checkDigits
+        self.validator = Validator(numberParsedInfo: numberParsedInfo)
+
+        let partsCount = numberParsedInfo.parts.count
         if partsCount > 1 {
-            let companyNumber = inputValidation.parts[partsCount - 2]
+            let companyNumber = numberParsedInfo.parts[partsCount - 2]
             self.isHeadquarters = companyNumber == "0001"
         } else {
             self.isHeadquarters = false
         }
     }
 
-    public func isValid(allSameDigitsAreValid: Bool) -> Bool {
-        return isValid(validationAlgorythm: .fazenda, allSameDigitsAreValid: allSameDigitsAreValid)
-    }
+    public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
 
-//    public static func generate() -> CNPJ {
-//        return generate(basicNumberLength: 12, checkDigitsLength: 2)
-//    }
-}
+        let algorythm = ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+            return T.calcWeightSum(basicNumber: basicNumber)
+        }
 
-extension CNPJ: PrivateFazendinhaNumberProtocol {
-
-    public static let a = 2
-    public static let b = 12
-
-    func calculateWeightsSum(basicNumber: String) -> Int {
-        return CNPJ.calcWeightSum(basicNumber: basicNumber)
+        return validator.isValid(validationAlgorythm: algorythm,
+                                 allSameDigitsAreValid: allSameDigitsAreValid)
     }
 
     static func calcWeightSum(basicNumber: String) -> Int {
@@ -61,8 +58,8 @@ extension CNPJ: PrivateFazendinhaNumberProtocol {
                                             stop: inout Bool) in
 
                                             let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
-                                                                         substringRange: substringRange,
-                                                                         basicNumber: basicNumber)
+                                                                              substringRange: substringRange,
+                                                                              basicNumber: basicNumber)
 
                                             let weight = subWeights[info.index]
                                             sum += info.number * weight
@@ -70,4 +67,9 @@ extension CNPJ: PrivateFazendinhaNumberProtocol {
         
         return sum
     }
+
+    //    public static func generate() -> CNPJ {
+    //        return generate(basicNumberLength: 12, checkDigitsLength: 2)
+    //    }
 }
+
