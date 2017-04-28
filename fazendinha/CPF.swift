@@ -1,14 +1,13 @@
 import Foundation
 
-public struct CPF: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
+public struct CPF: FazendinhaNumberProtocol {
     typealias T = CPF
 
-    let plainNumber: String
-    let maskedNumber: String
-    let checkDigits: [Int]
-    static let checkDigitsCount = 2
-    static let numberLength = 11
-    let number: String
+    public let plainNumber: String
+    public let maskedNumber: String
+    public let checkDigits: [Int]
+    public static var checkDigitsCount: Int = 2
+    public static var numberLength: Int = 11
 
     /**
      Creates a CPF from a given number
@@ -20,7 +19,6 @@ public struct CPF: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
      */
     public init(number: String) throws {
 
-        self.number = number
         let inputValidation = try CPF.validateNumberInput(number: number,
                                                           separators: [".", ".", "-"],
                                                           steps: [3, 3, 3, 2])
@@ -28,6 +26,24 @@ public struct CPF: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
         self.maskedNumber = inputValidation.maskedNumber
         self.checkDigits = inputValidation.checkDigits
     }
+
+    public var states: [State] {
+        
+        return 🇧🇷.states.filter { (state: State) -> Bool in
+            return state.fiscalRegion == fiscalRegion
+        }
+    }
+
+    public func isValid(validationAlgorythm: ValidationAlgorythm, allSameDigitsAreValid: Bool) -> Bool {
+
+    }
+
+//    public static func generate() -> CPF {
+//        return generate(basicNumberLength: 11, checkDigitsLength: 2)
+//    }
+}
+
+extension CPF: PrivateFazendinhaNumberProtocol {
 
     func calculateWeightsSum(basicNumber: String) -> Int {
         return CPF.calcWeightSum(basicNumber: basicNumber)
@@ -64,12 +80,5 @@ public struct CPF: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
                                               plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
         let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
         return fiscalRegion
-    }
-
-    public var states: [State] {
-
-        return 🇧🇷.states.filter { (state: State) -> Bool in
-            return state.fiscalRegion == fiscalRegion
-        }
     }
 }

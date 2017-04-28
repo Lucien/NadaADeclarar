@@ -1,19 +1,17 @@
 import Foundation
 
-public struct CNPJ: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
+public struct CNPJ: FazendinhaNumberProtocol {
     typealias T = CNPJ
 
-    let plainNumber: String
-    let maskedNumber: String
-    let checkDigits: [Int]
-    static let checkDigitsCount = 2
-    static let numberLength = 14
+    public let plainNumber: String
+    public let maskedNumber: String
+    public let checkDigits: [Int]
     public let isHeadquarters: Bool
-    let number: String
+    public static let checkDigitsCount = 2
+    public static let numberLength = 14
 
     public init(number: String) throws {
 
-        self.number = number
         let inputValidation = try CNPJ.validateNumberInput(number: number,
                                                            separators: [".", ".", "/", "-"],
                                                            steps: [2, 3, 3, 4, 2])
@@ -30,12 +28,22 @@ public struct CNPJ: FazendinhaNumberProtocol, PrivateFazendinhaNumberProtocol {
         }
     }
 
-    func calculateWeightsSum(basicNumber: String) -> Int {
-        return CNPJ.calcWeightSum(basicNumber: basicNumber)
-    }
-
     public func isValid(allSameDigitsAreValid: Bool) -> Bool {
         return isValid(validationAlgorythm: .fazenda, allSameDigitsAreValid: allSameDigitsAreValid)
+    }
+
+//    public static func generate() -> CNPJ {
+//        return generate(basicNumberLength: 12, checkDigitsLength: 2)
+//    }
+}
+
+extension CNPJ: PrivateFazendinhaNumberProtocol {
+
+    public static let a = 2
+    public static let b = 12
+
+    func calculateWeightsSum(basicNumber: String) -> Int {
+        return CNPJ.calcWeightSum(basicNumber: basicNumber)
     }
 
     static func calcWeightSum(basicNumber: String) -> Int {

@@ -3,12 +3,9 @@ import fazendinha
 
 class CPFTests: XCTestCase, ListImporter {
 
-    var cpfGroup: [CPF]!
-
-    override func setUp() {
-        super.setUp()
-        self.cpfGroup = CPFTests.generatedNumberList()
-    }
+    lazy var cpfGroup: [CPF]! = {
+        return CPFTests.generatedNumberList()
+    }()
 
     func testInvalidCPFInputFormatWith10Chars() throws {
 
@@ -78,6 +75,10 @@ class CPFTests: XCTestCase, ListImporter {
         XCTAssertFalse(try CPF(number: "999.999.999-99").isValid(validationAlgorythm: .fazenda))
     }
 
+    func testValidFazenda() {
+        XCTAssertTrue(try CPF(number: "60258671432").isValid(validationAlgorythm: .fazenda))
+    }
+
     func testValidCPFsUsingFazendaAlgorythm() throws {
 
         XCTAssertTrue(try CPF(number: "100.000.987-44").isValid(validationAlgorythm: .fazenda))
@@ -103,6 +104,8 @@ class CPFTests: XCTestCase, ListImporter {
     }
 
     func testValidCPFsUsingSimpleAlgorythm() throws {
+
+        XCTAssertTrue(try CPF(number: "10000098744").isValid(validationAlgorythm: .simple))
         XCTAssertTrue(try CPF(number: "520.852.930-00").isValid(validationAlgorythm: .simple))
         XCTAssertTrue(try CPF(number: "000.000.001-91").isValid(validationAlgorythm: .simple))
         XCTAssertTrue(try CPF(number: "544.780.212-10").isValid(validationAlgorythm: .simple))

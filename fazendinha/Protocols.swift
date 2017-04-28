@@ -10,26 +10,21 @@ public enum ValidationAlgorythm {
 }
 
 public protocol FazendinhaNumberProtocol {
+
     init(number: String) throws
-}
 
-protocol PrivateFazendinhaNumberProtocol: FazendinhaNumberProtocol {
-
-    static var numberLength: Int { get }
-    static var checkDigitsCount: Int { get }
     var checkDigits: [Int] { get }
-    var number: String { get }
     var plainNumber: String { get }
     var maskedNumber: String { get }
+    static var checkDigitsCount: Int { get }
+    static var numberLength: Int { get }
 
     func isValid(validationAlgorythm: ValidationAlgorythm, allSameDigitsAreValid: Bool) -> Bool
     static func generate() -> Self
-
-    func calculateWeightsSum(basicNumber: String) -> Int
-    static func calcWeightSum(basicNumber: String) -> Int
 }
 
-extension PrivateFazendinhaNumberProtocol {
+extension FazendinhaNumberProtocol {
+
 
     public static func generate() -> Self {
 
@@ -181,7 +176,7 @@ extension PrivateFazendinhaNumberProtocol {
         return parts
     }
 
-    public func validateUsingSimpleAlgorythm() -> Bool {
+    func validateUsingSimpleAlgorythm() -> Bool {
 
 
         let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -Self.checkDigitsCount)
@@ -213,7 +208,7 @@ extension PrivateFazendinhaNumberProtocol {
         return checkDigits == [v1, v2]
     }
 
-    public func validateUsingFazendaAlgorythm() -> Bool {
+    func validateUsingFazendaAlgorythm() -> Bool {
 
         let checkDigitsCount = checkDigits.count
 
@@ -257,10 +252,22 @@ extension PrivateFazendinhaNumberProtocol {
     static func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
                                   substringRange: Range<String.Index>,
                                   basicNumber: String) -> (number: Int, index: Int) {
-
+        
         let number = Int(enumeratedString!)!
         let index: Int = basicNumber.distance(from: basicNumber.startIndex,
                                               to: substringRange.lowerBound)
         return (number, index)
     }
+    
+    func calculateWeightsSum(basicNumber: String) -> Int { return 0}
+    static func calcWeightSum(basicNumber: String) -> Int { return 0 }
+}
+
+protocol PrivateFazendinhaNumberProtocol {
+    
+}
+
+extension PrivateFazendinhaNumberProtocol {
+    
+    
 }
