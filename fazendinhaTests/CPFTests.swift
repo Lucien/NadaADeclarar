@@ -154,10 +154,11 @@ class CPFTests: XCTestCase, ListImporter {
 
     func testCPFGeneration() {
 
-        for _ in 0...1000 {
-            let cpf = CPF.generate()
-            XCTAssertTrue(cpf.isValid())
-        }
+        let cpf = CPF.generate()
+        XCTAssertTrue(cpf.isValid())
+//        for _ in 0...1000 {
+//
+//        }
     }
 
     func testSimpleAlgorithmsSpeed() throws {

@@ -67,8 +67,19 @@ public struct Validator {
         let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -checkDigitsCount)
 
         let basicNumber = plainNumber.substring(to: upperBound)
-        let moduloNumber = 11
 
+        let expectedCheckDigits = Validator.expectedCheckDigits(fromBasicNumber: basicNumber,
+                                                                checkDigitsCount: checkDigitsCount,
+                                                                calculateWeightsSum: calculateWeightsSum)
+        
+        return numberParsedInfo.checkDigits == expectedCheckDigits
+    }
+
+    static func expectedCheckDigits(fromBasicNumber basicNumber: String,
+                                    checkDigitsCount: Int,
+                                    calculateWeightsSum: (String) -> (Int)) -> [Int] {
+
+        let moduloNumber = 11
         var expectedCheckDigits = [Int]()
         var nextBasicNumber = basicNumber
 
@@ -80,7 +91,12 @@ public struct Validator {
             nextBasicNumber.append(String(v))
             expectedCheckDigits.insert(v, at: i)
         }
-        
-        return numberParsedInfo.checkDigits == expectedCheckDigits
+        return expectedCheckDigits
+    }
+
+
+    public enum ValidationAlgorythm {
+        case simple
+        case fazenda(weightSumCalculation: (String) -> (Int))
     }
 }

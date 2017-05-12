@@ -1,7 +1,7 @@
 import Foundation
 
-public struct CPF: FazendinhaNumberProtocol {
-    typealias T = CPF
+public struct CPF: FazendinhaNumberProtocol, Generatable {
+    public typealias T = CPF
 
     public let plainNumber: String
     public let maskedNumber: String
@@ -38,16 +38,20 @@ public struct CPF: FazendinhaNumberProtocol {
         }
     }
 
-    static let fazendaAlgorythm = ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
-        return calcWeightSum(basicNumber: basicNumber)
+    static let fazendaAlgorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+        return T.calcWeightSum(basicNumber: basicNumber)
     }
 
-    public func isValid(validationAlgorythm: ValidationAlgorythm = CPF.fazendaAlgorythm,
+    public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = CPF.fazendaAlgorythm,
                         allSameDigitsAreValid: Bool = false) -> Bool {
 
         return validator.isValid(validationAlgorythm: validationAlgorythm,
                                  allSameDigitsAreValid: allSameDigitsAreValid)
     }
+
+//    public static func generate(weightsSumCalc: (String) -> (Int)) -> T {
+//        generate(weightsSumCalc: <#T##(String) -> (Int)#>)
+//    }
 
     static func calcWeightSum(basicNumber: String) -> Int {
 
@@ -81,9 +85,5 @@ public struct CPF: FazendinhaNumberProtocol {
         let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
         return fiscalRegion
     }
-
-//    public static func generate() -> CPF {
-//        return generate(basicNumberLength: 11, checkDigitsLength: 2)
-//    }
 }
 

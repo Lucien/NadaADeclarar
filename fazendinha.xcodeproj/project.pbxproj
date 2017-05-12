@@ -18,6 +18,7 @@
 		DF55E5571E73A3850065DA1A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF55E5561E73A3850065DA1A /* State.swift */; };
 		DF86461F1EB2EA530097ACC7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86461E1EB2EA530097ACC7 /* Validator.swift */; };
 		DF8646211EB2EC6D0097ACC7 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8646201EB2EC6D0097ACC7 /* Parser.swift */; };
+		DF8646261EB539080097ACC7 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8646251EB539080097ACC7 /* Generator.swift */; };
 		DFE830931EA3D563009F3DAD /* fazendinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF55E5361E73905B0065DA1A /* fazendinha.framework */; };
 		DFE8309B1EA3D58F009F3DAD /* CPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE830991EA3D58F009F3DAD /* CPFTests.swift */; };
 		DFE8309C1EA3D58F009F3DAD /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8309A1EA3D58F009F3DAD /* StateTests.swift */; };
@@ -51,6 +52,7 @@
 		DF724F5D1EB2DB5C00FFA502 /* API.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = API.playground; sourceTree = "<group>"; };
 		DF86461E1EB2EA530097ACC7 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		DF8646201EB2EC6D0097ACC7 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DF8646251EB539080097ACC7 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		DFE8308E1EA3D563009F3DAD /* fazendinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE830921EA3D563009F3DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFE830991EA3D58F009F3DAD /* CPFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPFTests.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				DFFC04931EA4802500C21DF7 /* Protocols.swift */,
 				DF86461E1EB2EA530097ACC7 /* Validator.swift */,
 				DF8646201EB2EC6D0097ACC7 /* Parser.swift */,
+				DF8646251EB539080097ACC7 /* Generator.swift */,
 			);
 			path = fazendinha;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				DF55E5551E73A3140065DA1A /* FiscalRegion.swift in Sources */,
 				DF8646211EB2EC6D0097ACC7 /* Parser.swift in Sources */,
 				DF86461F1EB2EA530097ACC7 /* Validator.swift in Sources */,
+				DF8646261EB539080097ACC7 /* Generator.swift in Sources */,
 				DF55E54F1E7390960065DA1A /* CPF.swift in Sources */,
 				DF55E5571E73A3850065DA1A /* State.swift in Sources */,
 			);

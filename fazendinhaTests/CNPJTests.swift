@@ -17,7 +17,7 @@ class CNPJTests: XCTestCase, ListImporter {
     }
 
     func testGenerateCNPJ() {
-
+        
         for _ in 0...1000 {
             XCTAssertTrue(CNPJ.generate().isValid())
         }

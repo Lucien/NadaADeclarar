@@ -35,7 +35,7 @@ public struct CNPJ: FazendinhaNumberProtocol {
 
     public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
 
-        let algorythm = ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+        let algorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
             return T.calcWeightSum(basicNumber: basicNumber)
         }
 

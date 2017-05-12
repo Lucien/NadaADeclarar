@@ -117,4 +117,8 @@ public struct Parser {
         }
         return parts
     }
+
+    public enum InputError: Error {
+        case invalidFormat
+    }
 }
