@@ -2,9 +2,9 @@ import Foundation
 
 public struct Validator {
 
-    public let numberParsedInfo: Parser.Info
+    let numberParsedInfo: Parser.Info
 
-    public func isValid(validationAlgorythm: ValidationAlgorythm,
+    func isValid(validationAlgorythm: ValidationAlgorythm,
                         allSameDigitsAreValid: Bool = false) -> Bool {
 
         if !allSameDigitsAreValid {

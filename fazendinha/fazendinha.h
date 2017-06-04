@@ -1,11 +1,3 @@
-//
-//  fazendinha.h
-//  fazendinha
-//
-//  Created by Lucien on 04/06/17.
-//  Copyright © 2017 cyberia. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for fazendinha.

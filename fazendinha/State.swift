@@ -23,7 +23,7 @@ extension State: Hashable {
 
 extension State: CustomStringConvertible {
     public var description: String {
-        return "State: \(name) (\(initials))\tFiscal Region: \(fiscalRegion)"
+        return "State: \(name) (\(initials)) Fiscal Region: \(fiscalRegion)"
     }
 }
 

@@ -1,5 +1,5 @@
-import fazendinha
 import XCTest
+@testable import fazendinha
 
 class StateTests: XCTestCase {
 
@@ -12,6 +12,12 @@ class StateTests: XCTestCase {
 
     func testNumberOfStates() {
         XCTAssertEqual(states.count, 27)
+    }
+
+    func testDescription() {
+
+        let state = State(initials: "HUE", name: "Hueland", fiscalRegion: .fR1)
+        XCTAssertEqual(state.description, "State: Hueland (HUE) Fiscal Region: fR1")
     }
 
     func testAcre() {

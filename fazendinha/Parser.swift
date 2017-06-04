@@ -1,8 +1,8 @@
 import Foundation
 
-public struct Parser {
+struct Parser {
 
-    public struct Info {
+    struct Info {
         let plainNumber: String
         let maskedNumber: String
         let checkDigits: [Int]
@@ -124,23 +124,18 @@ public struct Parser {
 }
 
 extension Parser.Info: Hashable {
-    public var hashValue: Int {
+    var hashValue: Int {
 
         let checkDigitsHashValue = checkDigits.reduce(5381) {
             return ($0 << 5) &+ $0 &+ Int($1)
             }.hashValue
 
-        let partsHashValue = parts.reduce(5381) {
-            return ($0 << 5) &+ $0 &+ $1.hashValue
-            }.hashValue
-
         return (plainNumber.hashValue ^
             maskedNumber.hashValue ^
-            checkDigitsHashValue ^
-            partsHashValue)
+            checkDigitsHashValue)
     }
     
-    public static func ==(lhs: Parser.Info, rhs: Parser.Info) -> Bool {
+    static func ==(lhs: Parser.Info, rhs: Parser.Info) -> Bool {
         return (lhs.plainNumber == rhs.plainNumber &&
             lhs.maskedNumber == rhs.maskedNumber &&
             lhs.checkDigits == rhs.checkDigits &&

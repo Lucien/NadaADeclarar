@@ -1,11 +1,20 @@
 import XCTest
-import fazendinha
+@testable import fazendinha
 
 class CPFTests: XCTestCase, ListImporter {
 
-    lazy var cpfGroup: [CPF]! = {
+    lazy var cpfGroup: Set<CPF>! = {
         return CPFTests.generatedNumberList()
     }()
+
+    func testCPFSet() {
+        XCTAssertEqual(cpfGroup.count, 1001)
+    }
+
+    func testCheckDigits() {
+        let cpf = try! CPF(number: "125.609.581-80")
+        XCTAssertEqual(cpf.checkDigits, [8, 0])
+    }
 
     func testInvalidCPFInputFormatWith10Chars() throws {
 

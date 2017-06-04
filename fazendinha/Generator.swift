@@ -1,14 +1,15 @@
 import Foundation
 
 protocol Generatable {
-    associatedtype T: FazendinhaNumberProtocol
-    static func generate() -> T
+    associatedtype T: NumberParsedInfoInterface
+    associatedtype F: FazendinhaNumberProtocol
+    static func generate() -> F
     static var weights: [Int] { get }
 }
 
 extension Generatable {
 
-    static func generate(weightsSumCalc: (String) -> (Int)) -> T {
+    static func generate(weightsSumCalc: (String) -> (Int)) -> F {
 
         let basicNumber = generateBasicNumber()
 
@@ -21,12 +22,8 @@ extension Generatable {
             number.append(String(checkDigit))
         }
 
-        do {
-            let fazendinhaType = try T(number: number)
-            return fazendinhaType
-        } catch {
-            fatalError("Could not create CPF from number: \(number)")
-        }
+        let fazendinhaType = try! F(number: number)
+        return fazendinhaType
     }
 
     static func generateBasicNumber() -> String {

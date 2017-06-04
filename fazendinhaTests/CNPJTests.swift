@@ -3,7 +3,7 @@ import fazendinha
 
 class CNPJTests: XCTestCase, ListImporter {
 
-    var cnpjList: [CNPJ]!
+    var cnpjList: Set<CNPJ>!
 
     override func setUp() {
         super.setUp()
@@ -21,5 +21,9 @@ class CNPJTests: XCTestCase, ListImporter {
         for _ in 0...1000 {
             XCTAssertTrue(CNPJ.generate().isValid())
         }
+    }
+
+    func testCNPJSet() {
+        XCTAssertEqual(self.cnpjList.count, 1001)
     }
 }

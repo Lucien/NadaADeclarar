@@ -24,6 +24,7 @@
 		DF063D481EE3B6290022C575 /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF063D411EE3B6290022C575 /* GeneratedCPFList.txt */; };
 		DF063D491EE3B6290022C575 /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D421EE3B6290022C575 /* ListImporter.swift */; };
 		DF063D4A1EE3B6290022C575 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D431EE3B6290022C575 /* StateTests.swift */; };
+		DFF226101EE49E060020A582 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2260F1EE49E060020A582 /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		DF063D421EE3B6290022C575 /* ListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImporter.swift; sourceTree = "<group>"; };
 		DF063D431EE3B6290022C575 /* StateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
 		DF063D4B1EE3B95C0022C575 /* API.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = API.playground; path = ../../fazendinha/API.playground; sourceTree = "<group>"; };
+		DFF2260F1EE49E060020A582 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				DF063D421EE3B6290022C575 /* ListImporter.swift */,
 				DF063D431EE3B6290022C575 /* StateTests.swift */,
 				DF063D211EE3B5AA0022C575 /* Info.plist */,
+				DFF2260F1EE49E060020A582 /* ParserTests.swift */,
 			);
 			path = fazendinhaTests;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				DF063D441EE3B6290022C575 /* CNPJTests.swift in Sources */,
 				DF063D491EE3B6290022C575 /* ListImporter.swift in Sources */,
+				DFF226101EE49E060020A582 /* ParserTests.swift in Sources */,
 				DF063D4A1EE3B6290022C575 /* StateTests.swift in Sources */,
 				DF063D451EE3B6290022C575 /* CPFTests.swift in Sources */,
 				DF063D461EE3B6290022C575 /* FiscalRegionTests.swift in Sources */,
@@ -466,6 +470,7 @@
 				DF063D271EE3B5AA0022C575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF063D281EE3B5AA0022C575 /* Build configuration list for PBXNativeTarget "fazendinhaTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +479,7 @@
 				DF063D2A1EE3B5AA0022C575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

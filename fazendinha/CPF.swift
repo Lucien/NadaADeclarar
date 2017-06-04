@@ -1,16 +1,17 @@
 import Foundation
 
-public struct CPF: FazendinhaNumberProtocol, Generatable {
+public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterface {
     public typealias T = CPF
+    public typealias F = CPF
 
-    public let plainNumber: String
-    public let maskedNumber: String
-    public let checkDigits: [Int]
     public static var checkDigitsCount: Int = 2
     public static var numberLength: Int = 11
     static let weights = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
+    static let separators: [Character] = [".", ".", "-"]
+    static let steps = [3, 3, 3, 2]
     let validator: Validator
     let parser = Parser()
+    let numberParsedInfo: Parser.Info
 
     /**
      Creates a CPF from a given number
@@ -22,13 +23,10 @@ public struct CPF: FazendinhaNumberProtocol, Generatable {
      */
     public init(number: String) throws {
 
-        let numberParsedInfo = try parser.parse(number: number,
-                                                separators: [".", ".", "-"],
-                                                steps: [3, 3, 3, 2])
+        self.numberParsedInfo = try parser.parse(number: number,
+                                                separators: CPF.separators,
+                                                steps: CPF.steps)
 
-        self.plainNumber = numberParsedInfo.plainNumber
-        self.maskedNumber = numberParsedInfo.maskedNumber
-        self.checkDigits = numberParsedInfo.checkDigits
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
     }
 
@@ -66,4 +64,3 @@ public struct CPF: FazendinhaNumberProtocol, Generatable {
         return fiscalRegion
     }
 }
-

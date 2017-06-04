@@ -1,28 +1,24 @@
 import Foundation
 
-public struct CNPJ: FazendinhaNumberProtocol, Generatable {
+public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterface {
 
     public typealias T = CNPJ
+    public typealias F = CNPJ
 
-    public let plainNumber: String
-    public let maskedNumber: String
-    public let checkDigits: [Int]
-    public let isHeadquarters: Bool
-    let validator: Validator
-    let parser = Parser()
     public static let checkDigitsCount = 2
     public static let numberLength = 14
+    public let isHeadquarters: Bool
     static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    let validator: Validator
+    let parser = Parser()
+    let numberParsedInfo: Parser.Info
 
     public init(number: String) throws {
 
-        let numberParsedInfo = try parser.parse(number: number,
+        self.numberParsedInfo = try parser.parse(number: number,
                                                 separators: [".", ".", "/", "-"],
                                                 steps: [2, 3, 3, 4, 2])
 
-        self.plainNumber = numberParsedInfo.plainNumber
-        self.maskedNumber = numberParsedInfo.maskedNumber
-        self.checkDigits = numberParsedInfo.checkDigits
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
 
         let partsCount = numberParsedInfo.parts.count

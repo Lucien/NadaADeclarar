@@ -5,7 +5,7 @@ protocol ListImporter {}
 
 extension ListImporter {
 
-    static func generatedNumberList<T>() -> [T] where T: FazendinhaNumberProtocol {
+    static func generatedNumberList<T>() -> Set<T> where T: FazendinhaNumberProtocol {
 
         let bundle = Bundle(for: CPFTests.self)
 
@@ -17,6 +17,6 @@ extension ListImporter {
         let list = stringList.map { (docString: String) -> T in
             return try! T(number: docString)
         }
-        return list
+        return Set(list.map{ $0 })
     }
 }
