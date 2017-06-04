@@ -1,0 +1,4 @@
+language: swift
+xcode_project: fazendinha.xcodeproj
+xcode_scheme: fazendinha
+osx_image: xcode8.3
