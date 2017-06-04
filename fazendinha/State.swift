@@ -6,7 +6,13 @@ public struct State {
     public let fiscalRegion: FiscalRegion
 }
 
-extension State: Equatable {
+extension State: Hashable {
+
+    public var hashValue: Int {
+        return (initials.hashValue ^
+            name.hashValue ^
+            fiscalRegion.hashValue)
+    }
 
     public static func ==(lhs: State, rhs: State) -> Bool {
         return lhs.initials == rhs.initials &&
@@ -15,11 +21,17 @@ extension State: Equatable {
     }
 }
 
+extension State: CustomStringConvertible {
+    public var description: String {
+        return "State: \(name) (\(initials))\tFiscal Region: \(fiscalRegion)"
+    }
+}
+
 public typealias 🇧🇷 = Brazil
 
 public struct Brazil {
 
-    public static let states =
+    public static let states: Set<State> =
         [State(initials: "AC", name: "Acre", fiscalRegion: .fR2),
          State(initials: "AL", name: "Alagoas", fiscalRegion: .fR4),
          State(initials: "AP", name: "Amapá", fiscalRegion: .fR2),

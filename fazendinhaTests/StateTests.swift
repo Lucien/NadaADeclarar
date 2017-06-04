@@ -3,7 +3,7 @@ import XCTest
 
 class StateTests: XCTestCase {
 
-    var states: [State]!
+    var states: Set<State>!
 
     override func setUp() {
         super.setUp()
@@ -15,217 +15,244 @@ class StateTests: XCTestCase {
     }
 
     func testAcre() {
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "AC"
+        }.first!
 
-        let state = states[0]
-        XCTAssertEqual(state.initials, "AC")
         XCTAssertEqual(state.name, "Acre")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testAlagoas() {
 
-        let state = states[1]
-        XCTAssertEqual(state.initials, "AL")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "AL"
+            }.first!
         XCTAssertEqual(state.name, "Alagoas")
         XCTAssertEqual(state.fiscalRegion, .fR4)
     }
 
     func testAmapa() {
 
-        let state = states[2]
-        XCTAssertEqual(state.initials, "AP")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "AP"
+            }.first!
         XCTAssertEqual(state.name, "Amapá")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testAmazonas() {
 
-        let state = states[3]
-        XCTAssertEqual(state.initials, "AM")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "AM"
+            }.first!
         XCTAssertEqual(state.name, "Amazonas")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testBahia() {
 
-        let state = states[4]
-        XCTAssertEqual(state.initials, "BA")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "BA"
+            }.first!
         XCTAssertEqual(state.name, "Bahia")
         XCTAssertEqual(state.fiscalRegion, .fR5)
     }
 
     func testCeara() {
 
-        let state = states[5]
-        XCTAssertEqual(state.initials, "CE")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "CE"
+            }.first!
         XCTAssertEqual(state.name, "Ceará")
         XCTAssertEqual(state.fiscalRegion, .fR3)
     }
 
     func testBrasilia() {
 
-        let state = states[6]
-        XCTAssertEqual(state.initials, "DF")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "DF"
+            }.first!
         XCTAssertEqual(state.name, "Brasília")
         XCTAssertEqual(state.fiscalRegion, .fR1)
     }
 
     func testEspiritoSanto() {
 
-        let state = states[7]
-        XCTAssertEqual(state.initials, "ES")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "ES"
+            }.first!
         XCTAssertEqual(state.name, "Espírito Santo")
         XCTAssertEqual(state.fiscalRegion, .fR7)
     }
 
     func testGoias() {
 
-        let state = states[8]
-        XCTAssertEqual(state.initials, "GO")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "GO"
+            }.first!
         XCTAssertEqual(state.name, "Goiás")
         XCTAssertEqual(state.fiscalRegion, .fR1)
     }
 
     func testMaranhao() {
 
-        let state = states[9]
-        XCTAssertEqual(state.initials, "MA")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "MA"
+            }.first!
         XCTAssertEqual(state.name, "Maranhão")
         XCTAssertEqual(state.fiscalRegion, .fR3)
     }
 
     func testMatoGrosso() {
 
-        let state = states[10]
-        XCTAssertEqual(state.initials, "MT")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "MT"
+            }.first!
         XCTAssertEqual(state.name, "Mato Grosso")
         XCTAssertEqual(state.fiscalRegion, .fR1)
     }
 
     func testMatoGrossoDoSul() {
 
-        let state = states[11]
-        XCTAssertEqual(state.initials, "MS")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "MS"
+            }.first!
         XCTAssertEqual(state.name, "Mato Grosso do Sul")
         XCTAssertEqual(state.fiscalRegion, .fR1)
     }
 
     func testMinasGerais() {
 
-        let state = states[12]
-        XCTAssertEqual(state.initials, "MG")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "MG"
+            }.first!
         XCTAssertEqual(state.name, "Minas Gerais")
         XCTAssertEqual(state.fiscalRegion, .fR6)
     }
 
     func testPara() {
 
-        let state = states[13]
-        XCTAssertEqual(state.initials, "PA")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "PA"
+            }.first!
         XCTAssertEqual(state.name, "Pará")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testParaiba() {
 
-        let state = states[14]
-        XCTAssertEqual(state.initials, "PB")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "PB"
+            }.first!
         XCTAssertEqual(state.name, "Paraíba")
         XCTAssertEqual(state.fiscalRegion, .fR4)
     }
 
     func testParana() {
 
-        let state = states[15]
-        XCTAssertEqual(state.initials, "PR")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "PR"
+            }.first!
         XCTAssertEqual(state.name, "Paraná")
         XCTAssertEqual(state.fiscalRegion, .fR9)
     }
 
     func testPernambuco() {
 
-        let state = states[16]
-        XCTAssertEqual(state.initials, "PE")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "PE"
+            }.first!
         XCTAssertEqual(state.name, "Pernambuco")
         XCTAssertEqual(state.fiscalRegion, .fR4)
     }
 
     func testPiaui() {
 
-        let state = states[17]
-        XCTAssertEqual(state.initials, "PI")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "PI"
+            }.first!
         XCTAssertEqual(state.name, "Piauí")
         XCTAssertEqual(state.fiscalRegion, .fR3)
     }
 
     func testRioDeJaneiro() {
 
-        let state = states[18]
-        XCTAssertEqual(state.initials, "RJ")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "RJ"
+            }.first!
         XCTAssertEqual(state.name, "Rio de Janeiro")
         XCTAssertEqual(state.fiscalRegion, .fR7)
     }
 
     func testRioGrandeDoNorte() {
 
-        let state = states[19]
-        XCTAssertEqual(state.initials, "RN")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "RN"
+            }.first!
         XCTAssertEqual(state.name, "Rio Grande do Norte")
         XCTAssertEqual(state.fiscalRegion, .fR4)
     }
 
     func testRioGrandeDoSul() {
 
-        let state = states[20]
-        XCTAssertEqual(state.initials, "RS")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "RS"
+            }.first!
         XCTAssertEqual(state.name, "Rio Grande do Sul")
         XCTAssertEqual(state.fiscalRegion, .fR10)
     }
 
     func testRondonia() {
 
-        let state = states[21]
-        XCTAssertEqual(state.initials, "RO")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "RO"
+            }.first!
         XCTAssertEqual(state.name, "Rondônia")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testRoraima() {
 
-        let state = states[22]
-        XCTAssertEqual(state.initials, "RR")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "RR"
+            }.first!
         XCTAssertEqual(state.name, "Roraima")
         XCTAssertEqual(state.fiscalRegion, .fR2)
     }
 
     func testSantaCatarina() {
 
-        let state = states[23]
-        XCTAssertEqual(state.initials, "SC")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "SC"
+            }.first!
         XCTAssertEqual(state.name, "Santa Catarina")
         XCTAssertEqual(state.fiscalRegion, .fR9)
     }
 
     func testSaoPaulo() {
 
-        let state = states[24]
-        XCTAssertEqual(state.initials, "SP")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "SP"
+            }.first!
         XCTAssertEqual(state.name, "São Paulo")
         XCTAssertEqual(state.fiscalRegion, .fR8)
     }
 
     func testSergipe() {
 
-        let state = states[25]
-        XCTAssertEqual(state.initials, "SE")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "SE"
+            }.first!
         XCTAssertEqual(state.name, "Sergipe")
         XCTAssertEqual(state.fiscalRegion, .fR5)
     }
     
     func testTocantins() {
         
-        let state = states[26]
-        XCTAssertEqual(state.initials, "TO")
+        let state = states.filter { (state: State) -> Bool in
+            return state.initials == "TO"
+            }.first!
         XCTAssertEqual(state.name, "Tocantins")
         XCTAssertEqual(state.fiscalRegion, .fR1)
     }
