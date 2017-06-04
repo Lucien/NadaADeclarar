@@ -4,7 +4,7 @@ Swift Library for validation and generation of CPF and CNPJ numbers.
 # Features
 
 - CPF and CNPJ validation and generation
-- Accepts number as stirng with or without separators.
+- Accepts number as string with or without separators.
 - CPF has information about the fiscal region and Brazilian States associated.
 - CNPJ shows if the number is from a company headquarters (0001 before the verification digits).
 
