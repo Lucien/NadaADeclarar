@@ -1,8 +1,8 @@
 import Foundation
 
-public struct CNPJ: FazendinhaNumberProtocol {
+public struct CNPJ: FazendinhaNumberProtocol, Generatable {
 
-    typealias T = CNPJ
+    public typealias T = CNPJ
 
     public let plainNumber: String
     public let maskedNumber: String
@@ -12,6 +12,7 @@ public struct CNPJ: FazendinhaNumberProtocol {
     let parser = Parser()
     public static let checkDigitsCount = 2
     public static let numberLength = 14
+    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
 
     public init(number: String) throws {
 
@@ -43,33 +44,12 @@ public struct CNPJ: FazendinhaNumberProtocol {
                                  allSameDigitsAreValid: allSameDigitsAreValid)
     }
 
-    static func calcWeightSum(basicNumber: String) -> Int {
-        var sum = 0
-        let range = Range(uncheckedBounds: (basicNumber.startIndex, upper: basicNumber.endIndex))
+    public static func generate() -> CNPJ {
 
-        let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
-        let subWeights = Array(weights.dropFirst(weights.count - basicNumber.characters.count))
-
-        basicNumber.enumerateSubstrings(in: range,
-                                        options: [.byComposedCharacterSequences, .reverse]) {
-                                            (enumeratedString: String?,
-                                            substringRange: Range<String.Index>,
-                                            enclosingRange: Range<String.Index>,
-                                            stop: inout Bool) in
-
-                                            let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
-                                                                              substringRange: substringRange,
-                                                                              basicNumber: basicNumber)
-
-                                            let weight = subWeights[info.index]
-                                            sum += info.number * weight
+        let cnpj = CNPJ.generate { (string: String) -> (Int) in
+            return CNPJ.calcWeightSum(basicNumber: string)
         }
-        
-        return sum
+        return cnpj
+
     }
-
-    //    public static func generate() -> CNPJ {
-    //        return generate(basicNumberLength: 12, checkDigitsLength: 2)
-    //    }
 }
-

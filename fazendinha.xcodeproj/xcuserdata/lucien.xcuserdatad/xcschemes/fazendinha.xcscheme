@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF55E5351E73905B0065DA1A"
+               BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
                BuildableName = "fazendinha.framework"
                BlueprintName = "fazendinha"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFE8308D1EA3D563009F3DAD"
+               BlueprintIdentifier = "DF063D191EE3B5AA0022C575"
                BuildableName = "fazendinhaTests.xctest"
                BlueprintName = "fazendinhaTests"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -43,7 +43,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF55E5351E73905B0065DA1A"
+            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
             BuildableName = "fazendinha.framework"
             BlueprintName = "fazendinha"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -65,7 +65,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF55E5351E73905B0065DA1A"
+            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
             BuildableName = "fazendinha.framework"
             BlueprintName = "fazendinha"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -83,7 +83,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF55E5351E73905B0065DA1A"
+            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
             BuildableName = "fazendinha.framework"
             BlueprintName = "fazendinha"
             ReferencedContainer = "container:fazendinha.xcodeproj">

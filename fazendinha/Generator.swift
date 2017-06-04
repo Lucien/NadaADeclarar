@@ -1,13 +1,14 @@
 import Foundation
 
-public protocol Generatable {
+protocol Generatable {
     associatedtype T: FazendinhaNumberProtocol
     static func generate() -> T
+    static var weights: [Int] { get }
 }
 
 extension Generatable {
 
-    public static func generate(weightsSumCalc: (String) -> (Int)) -> T {
+    static func generate(weightsSumCalc: (String) -> (Int)) -> T {
 
         let basicNumber = generateBasicNumber()
 
@@ -36,5 +37,40 @@ extension Generatable {
         }
         
         return randomNumber
+    }
+
+    static func calcWeightSum(basicNumber: String) -> Int {
+
+        var sum = 0
+        let range = Range(uncheckedBounds: (basicNumber.startIndex, upper: basicNumber.endIndex))
+
+        let subWeights = Array(weights.dropFirst(weights.count - basicNumber.characters.count))
+
+        basicNumber.enumerateSubstrings(in: range,
+                                        options: [.byComposedCharacterSequences]) {
+                                            (enumeratedString: String?,
+                                            substringRange: Range<String.Index>,
+                                            enclosingRange: Range<String.Index>,
+                                            stop: inout Bool) in
+
+                                            let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
+                                                                         substringRange: substringRange,
+                                                                         basicNumber: basicNumber)
+
+                                            let weight = subWeights[info.index]
+                                            sum += info.number * weight
+        }
+        
+        return sum
+    }
+
+    static func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
+                                  substringRange: Range<String.Index>,
+                                  basicNumber: String) -> (number: Int, index: Int) {
+
+        let number = Int(enumeratedString!)!
+        let index: Int = basicNumber.distance(from: basicNumber.startIndex,
+                                              to: substringRange.lowerBound)
+        return (number, index)
     }
 }

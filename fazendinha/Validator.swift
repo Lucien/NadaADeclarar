@@ -87,7 +87,8 @@ public struct Validator {
 
             let sum = calculateWeightsSum(nextBasicNumber)
             let remainder = sum % moduloNumber
-            let v = (remainder == 1 || remainder == 0) ? 0 : moduloNumber - remainder
+            let v = (remainder < 2) ? 0 : moduloNumber - remainder
+            assert(v >= 0 && v < 10, "verification number out of range 0 <= v <= 9")
             nextBasicNumber.append(String(v))
             expectedCheckDigits.insert(v, at: i)
         }

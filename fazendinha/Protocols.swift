@@ -11,15 +11,6 @@ public protocol FazendinhaNumberProtocol {
     static var numberLength: Int { get }
 }
 
-extension FazendinhaNumberProtocol {
-
-    static func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
-                           substringRange: Range<String.Index>,
-                           basicNumber: String) -> (number: Int, index: Int) {
-
-        let number = Int(enumeratedString!)!
-        let index: Int = basicNumber.distance(from: basicNumber.startIndex,
-                                              to: substringRange.lowerBound)
-        return (number, index)
-    }
+protocol Calc {
+    static func calcWeightSum(basicNumber: String) -> Int
 }

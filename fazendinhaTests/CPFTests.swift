@@ -11,7 +11,7 @@ class CPFTests: XCTestCase, ListImporter {
 
         XCTAssertThrowsError(try CPF(number: "7715350466"), "") {
             (error: Error) in
-            guard let cpfError = error as? InputError else {
+            guard let cpfError = error as? Parser.InputError else {
                 XCTFail()
                 return
             }
@@ -23,7 +23,7 @@ class CPFTests: XCTestCase, ListImporter {
 
         XCTAssertThrowsError(try CPF(number: "1556122322A"), "") {
             (error: Error) in
-            guard let cpfError = error as? InputError else {
+            guard let cpfError = error as? Parser.InputError else {
                 XCTFail()
                 return
             }
@@ -35,7 +35,7 @@ class CPFTests: XCTestCase, ListImporter {
 
         XCTAssertThrowsError(try CPF(number: "155.612.232-2-"), "") {
             (error: Error) in
-            guard let cpfError = error as? InputError else {
+            guard let cpfError = error as? Parser.InputError else {
                 XCTFail()
                 return
             }
@@ -47,7 +47,7 @@ class CPFTests: XCTestCase, ListImporter {
 
         XCTAssertThrowsError(try CPF(number: "155-612-232-24"), "") {
             (error: Error) in
-            guard let cpfError = error as? InputError else {
+            guard let cpfError = error as? Parser.InputError else {
                 XCTFail()
                 return
             }
@@ -143,7 +143,6 @@ class CPFTests: XCTestCase, ListImporter {
 
     func testStatesForFiscalRegion02() throws {
 
-
         let cpf = try CPF(number: "182.557.422-71")
         let states = 🇧🇷.states.filter { (state: State) -> Bool in
             return state.fiscalRegion == .fR2
@@ -154,18 +153,28 @@ class CPFTests: XCTestCase, ListImporter {
 
     func testCPFGeneration() {
 
-        let cpf = CPF.generate()
-        XCTAssertTrue(cpf.isValid())
-//        for _ in 0...1000 {
-//
-//        }
+        for _ in 1...1000 {
+            let cpf = CPF.generate()
+            XCTAssertTrue(cpf.isValid())
+        }
+    }
+
+    func testCPFValidationUsingSimpleMethod() {
+        for cpf in self.cpfGroup {
+            XCTAssertTrue(cpf.isValid(validationAlgorythm: .simple, allSameDigitsAreValid: false))
+        }
+    }
+
+    func testCPFValidationUsingFazendaMethod() {
+        for cpf in self.cpfGroup {
+            XCTAssertTrue(cpf.isValid())
+        }
     }
 
     func testSimpleAlgorithmsSpeed() throws {
         measure {
-
             for cpf in self.cpfGroup {
-                _ = cpf.isValid(validationAlgorythm: ValidationAlgorythm.simple)
+                _ = cpf.isValid(validationAlgorythm: Validator.ValidationAlgorythm.simple)
             }
         }
     }

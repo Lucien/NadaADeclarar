@@ -8,13 +8,14 @@ public struct CPF: FazendinhaNumberProtocol, Generatable {
     public let checkDigits: [Int]
     public static var checkDigitsCount: Int = 2
     public static var numberLength: Int = 11
+    static let weights = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
     let validator: Validator
     let parser = Parser()
 
     /**
      Creates a CPF from a given number
      - Parameter number: CPF number
-     - Throws: `InputError.invalidFormat` if the string is not either just numbers (E.g.: XXXXXXXXXXX) or number with
+     - Throws: `InputError.invalidFormat` if the string is not either just 11 numbers (E.g.: XXXXXXXXXXX) or number with
      the CPF mask. (E.g.: XXX.XXX.XXX-XX)
      - Returns: CPF
 
@@ -49,33 +50,12 @@ public struct CPF: FazendinhaNumberProtocol, Generatable {
                                  allSameDigitsAreValid: allSameDigitsAreValid)
     }
 
-//    public static func generate(weightsSumCalc: (String) -> (Int)) -> T {
-//        generate(weightsSumCalc: <#T##(String) -> (Int)#>)
-//    }
+    public static func generate() -> CPF {
 
-    static func calcWeightSum(basicNumber: String) -> Int {
-
-        var sum = 0
-        let range = Range(uncheckedBounds: (basicNumber.startIndex, upper: basicNumber.endIndex))
-
-        let initialWeight = basicNumber.characters.count + 1
-
-        basicNumber.enumerateSubstrings(in: range,
-                                        options: [.byComposedCharacterSequences]) {
-                                            (enumeratedString: String?,
-                                            substringRange: Range<String.Index>,
-                                            enclosingRange: Range<String.Index>,
-                                            stop: inout Bool) in
-
-                                            let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
-                                                                         substringRange: substringRange,
-                                                                         basicNumber: basicNumber)
-
-                                            let weight = (initialWeight - info.index)
-                                            sum += info.number * weight
+        let cpf = CPF.generate { (string: String) -> (Int) in
+            return CPF.calcWeightSum(basicNumber: string)
         }
-
-        return sum
+        return cpf
     }
 
     public var fiscalRegion: FiscalRegion {
