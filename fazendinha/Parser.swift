@@ -110,7 +110,7 @@ public struct Parser {
         var part: NSString?
         while scanner.scanUpToCharacters(from: characterSetToSkip,
                                          into: &part) {
-                                            
+
                                             if let part = part {
                                                 parts.append(part as String)
                                             }
@@ -120,5 +120,30 @@ public struct Parser {
 
     public enum InputError: Error {
         case invalidFormat
+    }
+}
+
+extension Parser.Info: Hashable {
+    public var hashValue: Int {
+
+        let checkDigitsHashValue = checkDigits.reduce(5381) {
+            return ($0 << 5) &+ $0 &+ Int($1)
+            }.hashValue
+
+        let partsHashValue = parts.reduce(5381) {
+            return ($0 << 5) &+ $0 &+ $1.hashValue
+            }.hashValue
+
+        return (plainNumber.hashValue ^
+            maskedNumber.hashValue ^
+            checkDigitsHashValue ^
+            partsHashValue)
+    }
+    
+    public static func ==(lhs: Parser.Info, rhs: Parser.Info) -> Bool {
+        return (lhs.plainNumber == rhs.plainNumber &&
+            lhs.maskedNumber == rhs.maskedNumber &&
+            lhs.checkDigits == rhs.checkDigits &&
+            lhs.parts == rhs.parts)
     }
 }
