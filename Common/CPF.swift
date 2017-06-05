@@ -6,11 +6,11 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
 
     public static var checkDigitsCount: Int = 2
     public static var numberLength: Int = 11
-    static let weights = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
+    static let weights: [Int] = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
     static let separators: [Character] = [".", ".", "-"]
-    static let steps = [3, 3, 3, checkDigitsCount]
+    static let steps: [Int] = [3, 3, 3, checkDigitsCount]
     let validator: Validator
-    let parser = Parser()
+    let parser: Parser = Parser()
     let numberParsedInfo: Parser.Info
 
     /**
@@ -36,9 +36,10 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
         }
     }
 
-    public static let fazendaAlgorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
-        return T.calcWeightSum(basicNumber: basicNumber)
-    }
+    public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
+        Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+            return T.calcWeightSum(basicNumber: basicNumber)
+        }
 
     public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
                         allSameDigitsAreValid: Bool = false) -> Bool {
@@ -59,7 +60,10 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
 
         let frRange = Range(uncheckedBounds: (plainNumber.index(plainNumber.endIndex, offsetBy: -3),
                                               plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
-        let fiscalRegion = FiscalRegion(rawValue: Int(plainNumber.substring(with: frRange))!)!
+        // swiftlint:disable force_unwrapping
+        let fiscalRegionValue = Int(plainNumber.substring(with: frRange))!
+        let fiscalRegion = FiscalRegion(rawValue: fiscalRegionValue)!
+        // swiftlint:enable force_unwrapping
         return fiscalRegion
     }
 }

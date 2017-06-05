@@ -14,7 +14,7 @@ struct Parser {
                steps: [Int]) throws -> Info {
 
         let numberLength = steps.reduce(0, +)
-        let checkDigitsCount = steps.last!
+        let checkDigitsCount = steps.last! // swiftlint:disable:this force_unwrapping
 
         var plainNumber: String = number
         var maskedNumber: String = number
@@ -94,7 +94,8 @@ struct Parser {
                                                                               offsetBy: -checkDigitsCount))
         var checkDigits = [Int]()
         for char in checkDigitsString.characters {
-            checkDigits.append(Int(String(char))!)
+            let checkDigit = Int(String(char))! // swiftlint:disable:this force_unwrapping
+            checkDigits.append(checkDigit)
         }
 
         return Info(plainNumber: plainNumber,
@@ -129,7 +130,7 @@ extension Parser.Info: Hashable {
 
         let checkDigitsHashValue = checkDigits.reduce(5381) {
             return ($0 << 5) &+ $0 &+ Int($1)
-            }.hashValue
+        }.hashValue
 
         return (plainNumber.hashValue ^
             maskedNumber.hashValue ^

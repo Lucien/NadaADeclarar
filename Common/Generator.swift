@@ -22,7 +22,7 @@ extension Generatable {
             number.append(String(checkDigit))
         }
 
-        let fazendinhaType = try! F(number: number)
+        let fazendinhaType = try! F(number: number) // swiftlint:disable:this force_try
         return fazendinhaType
     }
 
@@ -32,7 +32,6 @@ extension Generatable {
         for _ in 0 ..< basicNumberLength {
             randomNumber += String(arc4random() % 10)
         }
-        
         return randomNumber
     }
 
@@ -50,22 +49,24 @@ extension Generatable {
                                             enclosingRange: Range<String.Index>,
                                             stop: inout Bool) in
 
-                                            let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
-                                                                         substringRange: substringRange,
-                                                                         basicNumber: basicNumber)
+                                            if let enumeratedString = enumeratedString {
+                                                let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
+                                                                             substringRange: substringRange,
+                                                                             basicNumber: basicNumber)
 
-                                            let weight = subWeights[info.index]
-                                            sum += info.number * weight
+                                                let weight = subWeights[info.index]
+                                                sum += info.number * weight
+                                            }
         }
         
         return sum
     }
 
-    static func getNumberAndIndex(fromEnumeratedString enumeratedString: String?,
+    static func getNumberAndIndex(fromEnumeratedString enumeratedString: String,
                                   substringRange: Range<String.Index>,
                                   basicNumber: String) -> (number: Int, index: Int) {
 
-        let number = Int(enumeratedString!)!
+        let number = Int(enumeratedString)! // swiftlint:disable:this force_unwrapping
         let index: Int = basicNumber.distance(from: basicNumber.startIndex,
                                               to: substringRange.lowerBound)
         return (number, index)

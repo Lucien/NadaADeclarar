@@ -5,13 +5,13 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
     public typealias T = CNPJ
     public typealias F = CNPJ
 
-    public static let checkDigitsCount = 2
-    public static let numberLength = 14
-    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    public static let checkDigitsCount: Int = 2
+    public static let numberLength: Int = 14
+    static let weights: [Int] = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
     static let separators: [Character] = [".", ".", "/", "-"]
-    static let steps = [2, 3, 3, 4, checkDigitsCount]
+    static let steps: [Int] = [2, 3, 3, 4, checkDigitsCount]
     let validator: Validator
-    let parser = Parser()
+    let parser: Parser = Parser()
     let numberParsedInfo: Parser.Info
 
     /**
@@ -35,7 +35,7 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
     }
 
     public var branchNumber: String {
-        return numberParsedInfo.parts.dropLast().last!
+        return numberParsedInfo.parts.dropLast().last! // swiftlint:disable:this force_unwrapping
     }
 
     public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {

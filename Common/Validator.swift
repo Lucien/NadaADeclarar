@@ -5,7 +5,7 @@ public struct Validator {
     let numberParsedInfo: Parser.Info
 
     func isValid(validationAlgorythm: ValidationAlgorythm,
-                        allSameDigitsAreValid: Bool = false) -> Bool {
+                 allSameDigitsAreValid: Bool = false) -> Bool {
 
         if !allSameDigitsAreValid {
 
@@ -45,10 +45,13 @@ public struct Validator {
                                             enclosingRange: Range<String.Index>,
                                             stop: inout Bool) in
 
-                                            let number = Int(enumeratedString!)!
-                                            v1 += number * (basicNumberLength - index)
-                                            v2 += number * (basicNumberLength - (index + 1))
-                                            index += 1
+                                            if let enumeratedString = enumeratedString {
+                                                let number = Int(enumeratedString)! // swiftlint:disable:this force_unwrapping
+                                                v1 += number * (basicNumberLength - index)
+                                                v2 += number * (basicNumberLength - (index + 1))
+                                                index += 1
+                                            }
+
         }
 
         v1 = v1 % moduloNumber % (moduloNumber-1)
@@ -71,7 +74,7 @@ public struct Validator {
         let expectedCheckDigits = Validator.expectedCheckDigits(fromBasicNumber: basicNumber,
                                                                 checkDigitsCount: checkDigitsCount,
                                                                 calculateWeightsSum: calculateWeightsSum)
-        
+
         return numberParsedInfo.checkDigits == expectedCheckDigits
     }
 
@@ -94,8 +97,7 @@ public struct Validator {
         }
         return expectedCheckDigits
     }
-
-
+    
     public enum ValidationAlgorythm {
         case simple
         case fazenda(weightSumCalculation: (String) -> (Int))
