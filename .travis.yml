@@ -1,6 +1,6 @@
 language: swift
 xcode_project: fazendinha.xcodeproj
-xcode_scheme: fazendinha
+xcode_scheme: fazendinha_iOS
 osx_image: xcode8.3
 script:
   xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.3' build test
