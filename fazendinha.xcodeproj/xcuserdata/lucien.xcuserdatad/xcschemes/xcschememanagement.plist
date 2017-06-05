@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>fazendinha.xcscheme_^#shared#^_</key>
+		<key>fazendinha_iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>fazendinha_macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>fazendinha_tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>fazendinha_watchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +33,41 @@
 			<true/>
 		</dict>
 		<key>DF063D191EE3B5AA0022C575</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF226151EE4E3E80020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF2261D1EE4E3E80020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF226311EE4E40F0020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF2263E1EE4E41D0020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF226461EE4E41E0020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF2265A1EE4E42A0020A582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFF226621EE4E42B0020A582</key>
 		<dict>
 			<key>primary</key>
 			<true/>

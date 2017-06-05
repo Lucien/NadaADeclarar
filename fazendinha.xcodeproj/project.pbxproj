@@ -7,74 +7,179 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF063D1B1EE3B5AA0022C575 /* fazendinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF063D111EE3B5AA0022C575 /* fazendinha.framework */; };
-		DF063D221EE3B5AA0022C575 /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DF063D141EE3B5AA0022C575 /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF063D341EE3B61D0022C575 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D2B1EE3B61D0022C575 /* CNPJ.swift */; };
-		DF063D351EE3B61D0022C575 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D2C1EE3B61D0022C575 /* CPF.swift */; };
-		DF063D361EE3B61D0022C575 /* FiscalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D2D1EE3B61D0022C575 /* FiscalRegion.swift */; };
-		DF063D371EE3B61D0022C575 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D2E1EE3B61D0022C575 /* Generator.swift */; };
-		DF063D381EE3B61D0022C575 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D2F1EE3B61D0022C575 /* Parser.swift */; };
-		DF063D391EE3B61D0022C575 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D301EE3B61D0022C575 /* Protocols.swift */; };
-		DF063D3A1EE3B61D0022C575 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D311EE3B61D0022C575 /* State.swift */; };
-		DF063D3C1EE3B61D0022C575 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D331EE3B61D0022C575 /* Validator.swift */; };
-		DF063D441EE3B6290022C575 /* CNPJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D3D1EE3B6290022C575 /* CNPJTests.swift */; };
-		DF063D451EE3B6290022C575 /* CPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D3E1EE3B6290022C575 /* CPFTests.swift */; };
-		DF063D461EE3B6290022C575 /* FiscalRegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D3F1EE3B6290022C575 /* FiscalRegionTests.swift */; };
-		DF063D471EE3B6290022C575 /* GeneratedCNPJList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF063D401EE3B6290022C575 /* GeneratedCNPJList.txt */; };
-		DF063D481EE3B6290022C575 /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF063D411EE3B6290022C575 /* GeneratedCPFList.txt */; };
-		DF063D491EE3B6290022C575 /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D421EE3B6290022C575 /* ListImporter.swift */; };
-		DF063D4A1EE3B6290022C575 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF063D431EE3B6290022C575 /* StateTests.swift */; };
-		DFF226101EE49E060020A582 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF2260F1EE49E060020A582 /* ParserTests.swift */; };
+		DFF2261F1EE4E3E80020A582 /* fazendinha_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF226161EE4E3E80020A582 /* fazendinha_iOS.framework */; };
+		DFF226481EE4E41E0020A582 /* fazendinha_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF2263F1EE4E41D0020A582 /* fazendinha_tvOS.framework */; };
+		DFF226641EE4E42B0020A582 /* fazendinha_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF2265B1EE4E42A0020A582 /* fazendinha_macOS.framework */; };
+		DFF2267C1EE4E5730020A582 /* fazendinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226761EE4E4CB0020A582 /* fazendinhaTests.swift */; };
+		DFF2267D1EE4E5740020A582 /* fazendinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226761EE4E4CB0020A582 /* fazendinhaTests.swift */; };
+		DFF2267E1EE4E5750020A582 /* fazendinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226761EE4E4CB0020A582 /* fazendinhaTests.swift */; };
+		DFF2267F1EE4E57A0020A582 /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF226731EE4E4CB0020A582 /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF226801EE4E57A0020A582 /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF226731EE4E4CB0020A582 /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF226811EE4E57B0020A582 /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF226731EE4E4CB0020A582 /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF226821EE4E57C0020A582 /* fazendinha.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF226731EE4E4CB0020A582 /* fazendinha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF226AB1EE4E8CE0020A582 /* CNPJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A31EE4E8CE0020A582 /* CNPJTests.swift */; };
+		DFF226AC1EE4E8CE0020A582 /* CNPJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A31EE4E8CE0020A582 /* CNPJTests.swift */; };
+		DFF226AD1EE4E8CE0020A582 /* CNPJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A31EE4E8CE0020A582 /* CNPJTests.swift */; };
+		DFF226AE1EE4E8CE0020A582 /* CPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A41EE4E8CE0020A582 /* CPFTests.swift */; };
+		DFF226AF1EE4E8CE0020A582 /* CPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A41EE4E8CE0020A582 /* CPFTests.swift */; };
+		DFF226B01EE4E8CE0020A582 /* CPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A41EE4E8CE0020A582 /* CPFTests.swift */; };
+		DFF226B11EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A51EE4E8CE0020A582 /* FiscalRegionTests.swift */; };
+		DFF226B21EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A51EE4E8CE0020A582 /* FiscalRegionTests.swift */; };
+		DFF226B31EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A51EE4E8CE0020A582 /* FiscalRegionTests.swift */; };
+		DFF226B41EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A61EE4E8CE0020A582 /* GeneratedCNPJList.txt */; };
+		DFF226B51EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A61EE4E8CE0020A582 /* GeneratedCNPJList.txt */; };
+		DFF226B61EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A61EE4E8CE0020A582 /* GeneratedCNPJList.txt */; };
+		DFF226B71EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A71EE4E8CE0020A582 /* GeneratedCPFList.txt */; };
+		DFF226B81EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A71EE4E8CE0020A582 /* GeneratedCPFList.txt */; };
+		DFF226B91EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DFF226A71EE4E8CE0020A582 /* GeneratedCPFList.txt */; };
+		DFF226BA1EE4E8CE0020A582 /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A81EE4E8CE0020A582 /* ListImporter.swift */; };
+		DFF226BB1EE4E8CE0020A582 /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A81EE4E8CE0020A582 /* ListImporter.swift */; };
+		DFF226BC1EE4E8CE0020A582 /* ListImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A81EE4E8CE0020A582 /* ListImporter.swift */; };
+		DFF226BD1EE4E8CE0020A582 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A91EE4E8CE0020A582 /* ParserTests.swift */; };
+		DFF226BE1EE4E8CE0020A582 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A91EE4E8CE0020A582 /* ParserTests.swift */; };
+		DFF226BF1EE4E8CE0020A582 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226A91EE4E8CE0020A582 /* ParserTests.swift */; };
+		DFF226C01EE4E8CE0020A582 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226AA1EE4E8CE0020A582 /* StateTests.swift */; };
+		DFF226C11EE4E8CE0020A582 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226AA1EE4E8CE0020A582 /* StateTests.swift */; };
+		DFF226C21EE4E8CE0020A582 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226AA1EE4E8CE0020A582 /* StateTests.swift */; };
+		DFF226CB1EE4E8E10020A582 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C31EE4E8E10020A582 /* CNPJ.swift */; };
+		DFF226CC1EE4E8E10020A582 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C31EE4E8E10020A582 /* CNPJ.swift */; };
+		DFF226CD1EE4E8E10020A582 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C31EE4E8E10020A582 /* CNPJ.swift */; };
+		DFF226CE1EE4E8E10020A582 /* CNPJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C31EE4E8E10020A582 /* CNPJ.swift */; };
+		DFF226CF1EE4E8E10020A582 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C41EE4E8E10020A582 /* CPF.swift */; };
+		DFF226D01EE4E8E10020A582 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C41EE4E8E10020A582 /* CPF.swift */; };
+		DFF226D11EE4E8E10020A582 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C41EE4E8E10020A582 /* CPF.swift */; };
+		DFF226D21EE4E8E10020A582 /* CPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C41EE4E8E10020A582 /* CPF.swift */; };
+		DFF226D31EE4E8E10020A582 /* FiscalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */; };
+		DFF226D41EE4E8E10020A582 /* FiscalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */; };
+		DFF226D51EE4E8E10020A582 /* FiscalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */; };
+		DFF226D61EE4E8E10020A582 /* FiscalRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */; };
+		DFF226D71EE4E8E10020A582 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C61EE4E8E10020A582 /* Generator.swift */; };
+		DFF226D81EE4E8E10020A582 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C61EE4E8E10020A582 /* Generator.swift */; };
+		DFF226D91EE4E8E10020A582 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C61EE4E8E10020A582 /* Generator.swift */; };
+		DFF226DA1EE4E8E10020A582 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C61EE4E8E10020A582 /* Generator.swift */; };
+		DFF226DB1EE4E8E10020A582 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C71EE4E8E10020A582 /* Parser.swift */; };
+		DFF226DC1EE4E8E10020A582 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C71EE4E8E10020A582 /* Parser.swift */; };
+		DFF226DD1EE4E8E10020A582 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C71EE4E8E10020A582 /* Parser.swift */; };
+		DFF226DE1EE4E8E10020A582 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C71EE4E8E10020A582 /* Parser.swift */; };
+		DFF226DF1EE4E8E10020A582 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C81EE4E8E10020A582 /* Protocols.swift */; };
+		DFF226E01EE4E8E10020A582 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C81EE4E8E10020A582 /* Protocols.swift */; };
+		DFF226E11EE4E8E10020A582 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C81EE4E8E10020A582 /* Protocols.swift */; };
+		DFF226E21EE4E8E10020A582 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C81EE4E8E10020A582 /* Protocols.swift */; };
+		DFF226E31EE4E8E10020A582 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C91EE4E8E10020A582 /* State.swift */; };
+		DFF226E41EE4E8E10020A582 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C91EE4E8E10020A582 /* State.swift */; };
+		DFF226E51EE4E8E10020A582 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C91EE4E8E10020A582 /* State.swift */; };
+		DFF226E61EE4E8E10020A582 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226C91EE4E8E10020A582 /* State.swift */; };
+		DFF226E71EE4E8E10020A582 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226CA1EE4E8E10020A582 /* Validator.swift */; };
+		DFF226E81EE4E8E10020A582 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226CA1EE4E8E10020A582 /* Validator.swift */; };
+		DFF226E91EE4E8E10020A582 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226CA1EE4E8E10020A582 /* Validator.swift */; };
+		DFF226EA1EE4E8E10020A582 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF226CA1EE4E8E10020A582 /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF063D1C1EE3B5AA0022C575 /* PBXContainerItemProxy */ = {
+		DFF226201EE4E3E80020A582 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF063D081EE3B5AA0022C575 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DF063D101EE3B5AA0022C575;
-			remoteInfo = fazendinha;
+			remoteGlobalIDString = DFF226151EE4E3E80020A582;
+			remoteInfo = fazendinha_iOS;
+		};
+		DFF226491EE4E41E0020A582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF063D081EE3B5AA0022C575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFF2263E1EE4E41D0020A582;
+			remoteInfo = fazendinha_tvOS;
+		};
+		DFF226651EE4E42B0020A582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF063D081EE3B5AA0022C575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFF2265A1EE4E42A0020A582;
+			remoteInfo = fazendinha_macOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF063D111EE3B5AA0022C575 /* fazendinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF063D141EE3B5AA0022C575 /* fazendinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fazendinha.h; sourceTree = "<group>"; };
-		DF063D151EE3B5AA0022C575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF063D1A1EE3B5AA0022C575 /* fazendinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF063D211EE3B5AA0022C575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF063D2B1EE3B61D0022C575 /* CNPJ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPJ.swift; sourceTree = "<group>"; };
-		DF063D2C1EE3B61D0022C575 /* CPF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPF.swift; sourceTree = "<group>"; };
-		DF063D2D1EE3B61D0022C575 /* FiscalRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiscalRegion.swift; sourceTree = "<group>"; };
-		DF063D2E1EE3B61D0022C575 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
-		DF063D2F1EE3B61D0022C575 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		DF063D301EE3B61D0022C575 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		DF063D311EE3B61D0022C575 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		DF063D331EE3B61D0022C575 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		DF063D3D1EE3B6290022C575 /* CNPJTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPJTests.swift; sourceTree = "<group>"; };
-		DF063D3E1EE3B6290022C575 /* CPFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPFTests.swift; sourceTree = "<group>"; };
-		DF063D3F1EE3B6290022C575 /* FiscalRegionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiscalRegionTests.swift; sourceTree = "<group>"; };
-		DF063D401EE3B6290022C575 /* GeneratedCNPJList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCNPJList.txt; sourceTree = "<group>"; };
-		DF063D411EE3B6290022C575 /* GeneratedCPFList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCPFList.txt; sourceTree = "<group>"; };
-		DF063D421EE3B6290022C575 /* ListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImporter.swift; sourceTree = "<group>"; };
-		DF063D431EE3B6290022C575 /* StateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
 		DF063D4B1EE3B95C0022C575 /* API.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = API.playground; path = ../../fazendinha/API.playground; sourceTree = "<group>"; };
-		DFF2260F1EE49E060020A582 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		DFF226161EE4E3E80020A582 /* fazendinha_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF2261E1EE4E3E80020A582 /* fazendinha_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinha_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF226321EE4E40F0020A582 /* fazendinha_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF2263F1EE4E41D0020A582 /* fazendinha_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF226471EE4E41E0020A582 /* fazendinha_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinha_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF2265B1EE4E42A0020A582 /* fazendinha_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF226631EE4E42B0020A582 /* fazendinha_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinha_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF226731EE4E4CB0020A582 /* fazendinha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fazendinha.h; sourceTree = "<group>"; };
+		DFF226741EE4E4CB0020A582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF226761EE4E4CB0020A582 /* fazendinhaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fazendinhaTests.swift; sourceTree = "<group>"; };
+		DFF226771EE4E4CB0020A582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF226A31EE4E8CE0020A582 /* CNPJTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPJTests.swift; sourceTree = "<group>"; };
+		DFF226A41EE4E8CE0020A582 /* CPFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPFTests.swift; sourceTree = "<group>"; };
+		DFF226A51EE4E8CE0020A582 /* FiscalRegionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiscalRegionTests.swift; sourceTree = "<group>"; };
+		DFF226A61EE4E8CE0020A582 /* GeneratedCNPJList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCNPJList.txt; sourceTree = "<group>"; };
+		DFF226A71EE4E8CE0020A582 /* GeneratedCPFList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneratedCPFList.txt; sourceTree = "<group>"; };
+		DFF226A81EE4E8CE0020A582 /* ListImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListImporter.swift; sourceTree = "<group>"; };
+		DFF226A91EE4E8CE0020A582 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		DFF226AA1EE4E8CE0020A582 /* StateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
+		DFF226C31EE4E8E10020A582 /* CNPJ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPJ.swift; sourceTree = "<group>"; };
+		DFF226C41EE4E8E10020A582 /* CPF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPF.swift; sourceTree = "<group>"; };
+		DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiscalRegion.swift; sourceTree = "<group>"; };
+		DFF226C61EE4E8E10020A582 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		DFF226C71EE4E8E10020A582 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DFF226C81EE4E8E10020A582 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		DFF226C91EE4E8E10020A582 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		DFF226CA1EE4E8E10020A582 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF063D0D1EE3B5AA0022C575 /* Frameworks */ = {
+		DFF226121EE4E3E80020A582 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF063D171EE3B5AA0022C575 /* Frameworks */ = {
+		DFF2261B1EE4E3E80020A582 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF063D1B1EE3B5AA0022C575 /* fazendinha.framework in Frameworks */,
+				DFF2261F1EE4E3E80020A582 /* fazendinha_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2262E1EE4E40F0020A582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2263B1EE4E41D0020A582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226441EE4E41E0020A582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226481EE4E41E0020A582 /* fazendinha_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226571EE4E42A0020A582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226601EE4E42B0020A582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226641EE4E42B0020A582 /* fazendinha_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				DF063D4B1EE3B95C0022C575 /* API.playground */,
-				DF063D131EE3B5AA0022C575 /* fazendinha */,
-				DF063D1E1EE3B5AA0022C575 /* fazendinhaTests */,
+				DFF226721EE4E4CB0020A582 /* Common */,
+				DFF226751EE4E4CB0020A582 /* CommonTests */,
 				DF063D121EE3B5AA0022C575 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,93 +199,213 @@
 		DF063D121EE3B5AA0022C575 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF063D111EE3B5AA0022C575 /* fazendinha.framework */,
-				DF063D1A1EE3B5AA0022C575 /* fazendinhaTests.xctest */,
+				DFF226161EE4E3E80020A582 /* fazendinha_iOS.framework */,
+				DFF2261E1EE4E3E80020A582 /* fazendinha_iOSTests.xctest */,
+				DFF226321EE4E40F0020A582 /* fazendinha_watchOS.framework */,
+				DFF2263F1EE4E41D0020A582 /* fazendinha_tvOS.framework */,
+				DFF226471EE4E41E0020A582 /* fazendinha_tvOSTests.xctest */,
+				DFF2265B1EE4E42A0020A582 /* fazendinha_macOS.framework */,
+				DFF226631EE4E42B0020A582 /* fazendinha_macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DF063D131EE3B5AA0022C575 /* fazendinha */ = {
+		DFF226721EE4E4CB0020A582 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				DF063D2B1EE3B61D0022C575 /* CNPJ.swift */,
-				DF063D2C1EE3B61D0022C575 /* CPF.swift */,
-				DF063D2D1EE3B61D0022C575 /* FiscalRegion.swift */,
-				DF063D2E1EE3B61D0022C575 /* Generator.swift */,
-				DF063D2F1EE3B61D0022C575 /* Parser.swift */,
-				DF063D301EE3B61D0022C575 /* Protocols.swift */,
-				DF063D311EE3B61D0022C575 /* State.swift */,
-				DF063D331EE3B61D0022C575 /* Validator.swift */,
-				DF063D141EE3B5AA0022C575 /* fazendinha.h */,
-				DF063D151EE3B5AA0022C575 /* Info.plist */,
+				DFF226C31EE4E8E10020A582 /* CNPJ.swift */,
+				DFF226C41EE4E8E10020A582 /* CPF.swift */,
+				DFF226C51EE4E8E10020A582 /* FiscalRegion.swift */,
+				DFF226C61EE4E8E10020A582 /* Generator.swift */,
+				DFF226C71EE4E8E10020A582 /* Parser.swift */,
+				DFF226C81EE4E8E10020A582 /* Protocols.swift */,
+				DFF226C91EE4E8E10020A582 /* State.swift */,
+				DFF226CA1EE4E8E10020A582 /* Validator.swift */,
+				DFF226731EE4E4CB0020A582 /* fazendinha.h */,
+				DFF226741EE4E4CB0020A582 /* Info.plist */,
 			);
-			path = fazendinha;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		DF063D1E1EE3B5AA0022C575 /* fazendinhaTests */ = {
+		DFF226751EE4E4CB0020A582 /* CommonTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF063D3D1EE3B6290022C575 /* CNPJTests.swift */,
-				DF063D3E1EE3B6290022C575 /* CPFTests.swift */,
-				DF063D3F1EE3B6290022C575 /* FiscalRegionTests.swift */,
-				DF063D401EE3B6290022C575 /* GeneratedCNPJList.txt */,
-				DF063D411EE3B6290022C575 /* GeneratedCPFList.txt */,
-				DF063D421EE3B6290022C575 /* ListImporter.swift */,
-				DF063D431EE3B6290022C575 /* StateTests.swift */,
-				DF063D211EE3B5AA0022C575 /* Info.plist */,
-				DFF2260F1EE49E060020A582 /* ParserTests.swift */,
+				DFF226A31EE4E8CE0020A582 /* CNPJTests.swift */,
+				DFF226A41EE4E8CE0020A582 /* CPFTests.swift */,
+				DFF226A51EE4E8CE0020A582 /* FiscalRegionTests.swift */,
+				DFF226A61EE4E8CE0020A582 /* GeneratedCNPJList.txt */,
+				DFF226A71EE4E8CE0020A582 /* GeneratedCPFList.txt */,
+				DFF226A81EE4E8CE0020A582 /* ListImporter.swift */,
+				DFF226A91EE4E8CE0020A582 /* ParserTests.swift */,
+				DFF226AA1EE4E8CE0020A582 /* StateTests.swift */,
+				DFF226761EE4E4CB0020A582 /* fazendinhaTests.swift */,
+				DFF226771EE4E4CB0020A582 /* Info.plist */,
 			);
-			path = fazendinhaTests;
+			path = CommonTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		DF063D0E1EE3B5AA0022C575 /* Headers */ = {
+		DFF226131EE4E3E80020A582 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF063D221EE3B5AA0022C575 /* fazendinha.h in Headers */,
+				DFF2267F1EE4E57A0020A582 /* fazendinha.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2262F1EE4E40F0020A582 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226801EE4E57A0020A582 /* fazendinha.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2263C1EE4E41D0020A582 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226811EE4E57B0020A582 /* fazendinha.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226581EE4E42A0020A582 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226821EE4E57C0020A582 /* fazendinha.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DF063D101EE3B5AA0022C575 /* fazendinha */ = {
+		DFF226151EE4E3E80020A582 /* fazendinha_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF063D251EE3B5AA0022C575 /* Build configuration list for PBXNativeTarget "fazendinha" */;
+			buildConfigurationList = DFF226271EE4E3E80020A582 /* Build configuration list for PBXNativeTarget "fazendinha_iOS" */;
 			buildPhases = (
-				DF063D0C1EE3B5AA0022C575 /* Sources */,
-				DF063D0D1EE3B5AA0022C575 /* Frameworks */,
-				DF063D0E1EE3B5AA0022C575 /* Headers */,
-				DF063D0F1EE3B5AA0022C575 /* Resources */,
+				DFF226111EE4E3E80020A582 /* Sources */,
+				DFF226121EE4E3E80020A582 /* Frameworks */,
+				DFF226131EE4E3E80020A582 /* Headers */,
+				DFF226141EE4E3E80020A582 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = fazendinha;
-			productName = fazendinha;
-			productReference = DF063D111EE3B5AA0022C575 /* fazendinha.framework */;
+			name = fazendinha_iOS;
+			productName = fazendinha_iOS;
+			productReference = DFF226161EE4E3E80020A582 /* fazendinha_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DF063D191EE3B5AA0022C575 /* fazendinhaTests */ = {
+		DFF2261D1EE4E3E80020A582 /* fazendinha_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF063D281EE3B5AA0022C575 /* Build configuration list for PBXNativeTarget "fazendinhaTests" */;
+			buildConfigurationList = DFF2262A1EE4E3E80020A582 /* Build configuration list for PBXNativeTarget "fazendinha_iOSTests" */;
 			buildPhases = (
-				DF063D161EE3B5AA0022C575 /* Sources */,
-				DF063D171EE3B5AA0022C575 /* Frameworks */,
-				DF063D181EE3B5AA0022C575 /* Resources */,
+				DFF2261A1EE4E3E80020A582 /* Sources */,
+				DFF2261B1EE4E3E80020A582 /* Frameworks */,
+				DFF2261C1EE4E3E80020A582 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DF063D1D1EE3B5AA0022C575 /* PBXTargetDependency */,
+				DFF226211EE4E3E80020A582 /* PBXTargetDependency */,
 			);
-			name = fazendinhaTests;
-			productName = fazendinhaTests;
-			productReference = DF063D1A1EE3B5AA0022C575 /* fazendinhaTests.xctest */;
+			name = fazendinha_iOSTests;
+			productName = fazendinha_iOSTests;
+			productReference = DFF2261E1EE4E3E80020A582 /* fazendinha_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFF226311EE4E40F0020A582 /* fazendinha_watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF226371EE4E40F0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_watchOS" */;
+			buildPhases = (
+				DFF2262D1EE4E40F0020A582 /* Sources */,
+				DFF2262E1EE4E40F0020A582 /* Frameworks */,
+				DFF2262F1EE4E40F0020A582 /* Headers */,
+				DFF226301EE4E40F0020A582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fazendinha_watchOS;
+			productName = fazendinha_watchOS;
+			productReference = DFF226321EE4E40F0020A582 /* fazendinha_watchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DFF2263E1EE4E41D0020A582 /* fazendinha_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF226501EE4E41E0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_tvOS" */;
+			buildPhases = (
+				DFF2263A1EE4E41D0020A582 /* Sources */,
+				DFF2263B1EE4E41D0020A582 /* Frameworks */,
+				DFF2263C1EE4E41D0020A582 /* Headers */,
+				DFF2263D1EE4E41D0020A582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fazendinha_tvOS;
+			productName = fazendinha_tvOS;
+			productReference = DFF2263F1EE4E41D0020A582 /* fazendinha_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DFF226461EE4E41E0020A582 /* fazendinha_tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF226531EE4E41E0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_tvOSTests" */;
+			buildPhases = (
+				DFF226431EE4E41E0020A582 /* Sources */,
+				DFF226441EE4E41E0020A582 /* Frameworks */,
+				DFF226451EE4E41E0020A582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFF2264A1EE4E41E0020A582 /* PBXTargetDependency */,
+			);
+			name = fazendinha_tvOSTests;
+			productName = fazendinha_tvOSTests;
+			productReference = DFF226471EE4E41E0020A582 /* fazendinha_tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFF2265A1EE4E42A0020A582 /* fazendinha_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF2266C1EE4E42B0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_macOS" */;
+			buildPhases = (
+				DFF226561EE4E42A0020A582 /* Sources */,
+				DFF226571EE4E42A0020A582 /* Frameworks */,
+				DFF226581EE4E42A0020A582 /* Headers */,
+				DFF226591EE4E42A0020A582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fazendinha_macOS;
+			productName = fazendinha_macOS;
+			productReference = DFF2265B1EE4E42A0020A582 /* fazendinha_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DFF226621EE4E42B0020A582 /* fazendinha_macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF2266F1EE4E42B0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_macOSTests" */;
+			buildPhases = (
+				DFF2265F1EE4E42B0020A582 /* Sources */,
+				DFF226601EE4E42B0020A582 /* Frameworks */,
+				DFF226611EE4E42B0020A582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFF226661EE4E42B0020A582 /* PBXTargetDependency */,
+			);
+			name = fazendinha_macOSTests;
+			productName = fazendinha_macOSTests;
+			productReference = DFF226631EE4E42B0020A582 /* fazendinha_macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -193,13 +418,41 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = cyberia;
 				TargetAttributes = {
-					DF063D101EE3B5AA0022C575 = {
+					DFF226151EE4E3E80020A582 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BW4A36633A;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
-					DF063D191EE3B5AA0022C575 = {
+					DFF2261D1EE4E3E80020A582 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BW4A36633A;
+						ProvisioningStyle = Automatic;
+					};
+					DFF226311EE4E40F0020A582 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BW4A36633A;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					DFF2263E1EE4E41D0020A582 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BW4A36633A;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					DFF226461EE4E41E0020A582 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BW4A36633A;
+						ProvisioningStyle = Automatic;
+					};
+					DFF2265A1EE4E42A0020A582 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = BW4A36633A;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					DFF226621EE4E42B0020A582 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = BW4A36633A;
 						ProvisioningStyle = Automatic;
@@ -218,67 +471,195 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF063D101EE3B5AA0022C575 /* fazendinha */,
-				DF063D191EE3B5AA0022C575 /* fazendinhaTests */,
+				DFF226151EE4E3E80020A582 /* fazendinha_iOS */,
+				DFF2261D1EE4E3E80020A582 /* fazendinha_iOSTests */,
+				DFF226311EE4E40F0020A582 /* fazendinha_watchOS */,
+				DFF2263E1EE4E41D0020A582 /* fazendinha_tvOS */,
+				DFF226461EE4E41E0020A582 /* fazendinha_tvOSTests */,
+				DFF2265A1EE4E42A0020A582 /* fazendinha_macOS */,
+				DFF226621EE4E42B0020A582 /* fazendinha_macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DF063D0F1EE3B5AA0022C575 /* Resources */ = {
+		DFF226141EE4E3E80020A582 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF063D181EE3B5AA0022C575 /* Resources */ = {
+		DFF2261C1EE4E3E80020A582 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF063D481EE3B6290022C575 /* GeneratedCPFList.txt in Resources */,
-				DF063D471EE3B6290022C575 /* GeneratedCNPJList.txt in Resources */,
+				DFF226B71EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */,
+				DFF226B41EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226301EE4E40F0020A582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2263D1EE4E41D0020A582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226451EE4E41E0020A582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226B81EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */,
+				DFF226B51EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226591EE4E42A0020A582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226611EE4E42B0020A582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226B91EE4E8CE0020A582 /* GeneratedCPFList.txt in Resources */,
+				DFF226B61EE4E8CE0020A582 /* GeneratedCNPJList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF063D0C1EE3B5AA0022C575 /* Sources */ = {
+		DFF226111EE4E3E80020A582 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF063D3C1EE3B61D0022C575 /* Validator.swift in Sources */,
-				DF063D341EE3B61D0022C575 /* CNPJ.swift in Sources */,
-				DF063D371EE3B61D0022C575 /* Generator.swift in Sources */,
-				DF063D381EE3B61D0022C575 /* Parser.swift in Sources */,
-				DF063D391EE3B61D0022C575 /* Protocols.swift in Sources */,
-				DF063D361EE3B61D0022C575 /* FiscalRegion.swift in Sources */,
-				DF063D3A1EE3B61D0022C575 /* State.swift in Sources */,
-				DF063D351EE3B61D0022C575 /* CPF.swift in Sources */,
+				DFF226E71EE4E8E10020A582 /* Validator.swift in Sources */,
+				DFF226CB1EE4E8E10020A582 /* CNPJ.swift in Sources */,
+				DFF226D71EE4E8E10020A582 /* Generator.swift in Sources */,
+				DFF226DB1EE4E8E10020A582 /* Parser.swift in Sources */,
+				DFF226DF1EE4E8E10020A582 /* Protocols.swift in Sources */,
+				DFF226D31EE4E8E10020A582 /* FiscalRegion.swift in Sources */,
+				DFF226E31EE4E8E10020A582 /* State.swift in Sources */,
+				DFF226CF1EE4E8E10020A582 /* CPF.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF063D161EE3B5AA0022C575 /* Sources */ = {
+		DFF2261A1EE4E3E80020A582 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF063D441EE3B6290022C575 /* CNPJTests.swift in Sources */,
-				DF063D491EE3B6290022C575 /* ListImporter.swift in Sources */,
-				DFF226101EE49E060020A582 /* ParserTests.swift in Sources */,
-				DF063D4A1EE3B6290022C575 /* StateTests.swift in Sources */,
-				DF063D451EE3B6290022C575 /* CPFTests.swift in Sources */,
-				DF063D461EE3B6290022C575 /* FiscalRegionTests.swift in Sources */,
+				DFF226AB1EE4E8CE0020A582 /* CNPJTests.swift in Sources */,
+				DFF226C01EE4E8CE0020A582 /* StateTests.swift in Sources */,
+				DFF2267C1EE4E5730020A582 /* fazendinhaTests.swift in Sources */,
+				DFF226BD1EE4E8CE0020A582 /* ParserTests.swift in Sources */,
+				DFF226BA1EE4E8CE0020A582 /* ListImporter.swift in Sources */,
+				DFF226AE1EE4E8CE0020A582 /* CPFTests.swift in Sources */,
+				DFF226B11EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2262D1EE4E40F0020A582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226E81EE4E8E10020A582 /* Validator.swift in Sources */,
+				DFF226CC1EE4E8E10020A582 /* CNPJ.swift in Sources */,
+				DFF226D81EE4E8E10020A582 /* Generator.swift in Sources */,
+				DFF226DC1EE4E8E10020A582 /* Parser.swift in Sources */,
+				DFF226E01EE4E8E10020A582 /* Protocols.swift in Sources */,
+				DFF226D41EE4E8E10020A582 /* FiscalRegion.swift in Sources */,
+				DFF226E41EE4E8E10020A582 /* State.swift in Sources */,
+				DFF226D01EE4E8E10020A582 /* CPF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2263A1EE4E41D0020A582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226E91EE4E8E10020A582 /* Validator.swift in Sources */,
+				DFF226CD1EE4E8E10020A582 /* CNPJ.swift in Sources */,
+				DFF226D91EE4E8E10020A582 /* Generator.swift in Sources */,
+				DFF226DD1EE4E8E10020A582 /* Parser.swift in Sources */,
+				DFF226E11EE4E8E10020A582 /* Protocols.swift in Sources */,
+				DFF226D51EE4E8E10020A582 /* FiscalRegion.swift in Sources */,
+				DFF226E51EE4E8E10020A582 /* State.swift in Sources */,
+				DFF226D11EE4E8E10020A582 /* CPF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226431EE4E41E0020A582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226AC1EE4E8CE0020A582 /* CNPJTests.swift in Sources */,
+				DFF226C11EE4E8CE0020A582 /* StateTests.swift in Sources */,
+				DFF2267D1EE4E5740020A582 /* fazendinhaTests.swift in Sources */,
+				DFF226BE1EE4E8CE0020A582 /* ParserTests.swift in Sources */,
+				DFF226BB1EE4E8CE0020A582 /* ListImporter.swift in Sources */,
+				DFF226AF1EE4E8CE0020A582 /* CPFTests.swift in Sources */,
+				DFF226B21EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF226561EE4E42A0020A582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226EA1EE4E8E10020A582 /* Validator.swift in Sources */,
+				DFF226CE1EE4E8E10020A582 /* CNPJ.swift in Sources */,
+				DFF226DA1EE4E8E10020A582 /* Generator.swift in Sources */,
+				DFF226DE1EE4E8E10020A582 /* Parser.swift in Sources */,
+				DFF226E21EE4E8E10020A582 /* Protocols.swift in Sources */,
+				DFF226D61EE4E8E10020A582 /* FiscalRegion.swift in Sources */,
+				DFF226E61EE4E8E10020A582 /* State.swift in Sources */,
+				DFF226D21EE4E8E10020A582 /* CPF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF2265F1EE4E42B0020A582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF226AD1EE4E8CE0020A582 /* CNPJTests.swift in Sources */,
+				DFF226C21EE4E8CE0020A582 /* StateTests.swift in Sources */,
+				DFF2267E1EE4E5750020A582 /* fazendinhaTests.swift in Sources */,
+				DFF226BF1EE4E8CE0020A582 /* ParserTests.swift in Sources */,
+				DFF226BC1EE4E8CE0020A582 /* ListImporter.swift in Sources */,
+				DFF226B01EE4E8CE0020A582 /* CPFTests.swift in Sources */,
+				DFF226B31EE4E8CE0020A582 /* FiscalRegionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF063D1D1EE3B5AA0022C575 /* PBXTargetDependency */ = {
+		DFF226211EE4E3E80020A582 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DF063D101EE3B5AA0022C575 /* fazendinha */;
-			targetProxy = DF063D1C1EE3B5AA0022C575 /* PBXContainerItemProxy */;
+			target = DFF226151EE4E3E80020A582 /* fazendinha_iOS */;
+			targetProxy = DFF226201EE4E3E80020A582 /* PBXContainerItemProxy */;
+		};
+		DFF2264A1EE4E41E0020A582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFF2263E1EE4E41D0020A582 /* fazendinha_tvOS */;
+			targetProxy = DFF226491EE4E41E0020A582 /* PBXContainerItemProxy */;
+		};
+		DFF226661EE4E42B0020A582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFF2265A1EE4E42A0020A582 /* fazendinha_macOS */;
+			targetProxy = DFF226651EE4E42B0020A582 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -384,7 +765,7 @@
 			};
 			name = Release;
 		};
-		DF063D261EE3B5AA0022C575 /* Debug */ = {
+		DFF226281EE4E3E80020A582 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -394,10 +775,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = fazendinha/Info.plist;
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.net.cyberia.fazendinha;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -405,7 +786,7 @@
 			};
 			name = Debug;
 		};
-		DF063D271EE3B5AA0022C575 /* Release */ = {
+		DFF226291EE4E3E80020A582 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -415,38 +796,247 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = fazendinha/Info.plist;
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.net.cyberia.fazendinha;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		DF063D291EE3B5AA0022C575 /* Debug */ = {
+		DFF2262B1EE4E3E80020A582 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = BW4A36633A;
-				INFOPLIST_FILE = fazendinhaTests/Info.plist;
+				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.net.cyberia.fazendinhaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		DF063D2A1EE3B5AA0022C575 /* Release */ = {
+		DFF2262C1EE4E3E80020A582 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = BW4A36633A;
-				INFOPLIST_FILE = fazendinhaTests/Info.plist;
+				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.net.cyberia.fazendinhaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DFF226381EE4E40F0020A582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		DFF226391EE4E40F0020A582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		DFF226511EE4E41E0020A582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		DFF226521EE4E41E0020A582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		DFF226541EE4E41E0020A582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		DFF226551EE4E41E0020A582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		DFF2266D1EE4E42B0020A582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DFF2266E1EE4E42B0020A582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DFF226701EE4E42B0020A582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DFF226711EE4E42B0020A582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BW4A36633A;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.net.cyberia.fazendinha-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -463,23 +1053,61 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF063D251EE3B5AA0022C575 /* Build configuration list for PBXNativeTarget "fazendinha" */ = {
+		DFF226271EE4E3E80020A582 /* Build configuration list for PBXNativeTarget "fazendinha_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF063D261EE3B5AA0022C575 /* Debug */,
-				DF063D271EE3B5AA0022C575 /* Release */,
+				DFF226281EE4E3E80020A582 /* Debug */,
+				DFF226291EE4E3E80020A582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		DF063D281EE3B5AA0022C575 /* Build configuration list for PBXNativeTarget "fazendinhaTests" */ = {
+		DFF2262A1EE4E3E80020A582 /* Build configuration list for PBXNativeTarget "fazendinha_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF063D291EE3B5AA0022C575 /* Debug */,
-				DF063D2A1EE3B5AA0022C575 /* Release */,
+				DFF2262B1EE4E3E80020A582 /* Debug */,
+				DFF2262C1EE4E3E80020A582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		DFF226371EE4E40F0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF226381EE4E40F0020A582 /* Debug */,
+				DFF226391EE4E40F0020A582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFF226501EE4E41E0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF226511EE4E41E0020A582 /* Debug */,
+				DFF226521EE4E41E0020A582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFF226531EE4E41E0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF226541EE4E41E0020A582 /* Debug */,
+				DFF226551EE4E41E0020A582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFF2266C1EE4E42B0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF2266D1EE4E42B0020A582 /* Debug */,
+				DFF2266E1EE4E42B0020A582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DFF2266F1EE4E42B0020A582 /* Build configuration list for PBXNativeTarget "fazendinha_macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF226701EE4E42B0020A582 /* Debug */,
+				DFF226711EE4E42B0020A582 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

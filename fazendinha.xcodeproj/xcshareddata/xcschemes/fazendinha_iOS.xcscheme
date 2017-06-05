@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
-               BuildableName = "fazendinha.framework"
-               BlueprintName = "fazendinha"
+               BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+               BuildableName = "fazendinha_iOS.framework"
+               BlueprintName = "fazendinha_iOS"
                ReferencedContainer = "container:fazendinha.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF063D191EE3B5AA0022C575"
-               BuildableName = "fazendinhaTests.xctest"
-               BlueprintName = "fazendinhaTests"
+               BlueprintIdentifier = "DFF2261D1EE4E3E80020A582"
+               BuildableName = "fazendinha_iOSTests.xctest"
+               BlueprintName = "fazendinha_iOSTests"
                ReferencedContainer = "container:fazendinha.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
-            BuildableName = "fazendinha.framework"
-            BlueprintName = "fazendinha"
+            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BuildableName = "fazendinha_iOS.framework"
+            BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
-            BuildableName = "fazendinha.framework"
-            BlueprintName = "fazendinha"
+            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BuildableName = "fazendinha_iOS.framework"
+            BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF063D101EE3B5AA0022C575"
-            BuildableName = "fazendinha.framework"
-            BlueprintName = "fazendinha"
+            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BuildableName = "fazendinha_iOS.framework"
+            BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

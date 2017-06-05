@@ -3,6 +3,6 @@ xcode_project: fazendinha.xcodeproj
 xcode_scheme: fazendinha
 osx_image: xcode8.3
 script:
-  xcodebuild -scheme fazendinha -project fazendinha.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.3' build test
+  xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.3' build test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
