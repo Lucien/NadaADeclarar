@@ -1,4 +1,4 @@
-#import <Cocoa/Cocoa.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for fazendinha_macOS.
 FOUNDATION_EXPORT double fazendinha_VersionNumber;
