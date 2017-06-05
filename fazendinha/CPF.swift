@@ -8,7 +8,7 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
     public static var numberLength: Int = 11
     static let weights = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
     static let separators: [Character] = [".", ".", "-"]
-    static let steps = [3, 3, 3, 2]
+    static let steps = [3, 3, 3, checkDigitsCount]
     let validator: Validator
     let parser = Parser()
     let numberParsedInfo: Parser.Info

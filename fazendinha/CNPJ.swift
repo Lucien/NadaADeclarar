@@ -8,7 +8,7 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
     public static let checkDigitsCount = 2
     public static let numberLength = 14
     public let isHeadquarters: Bool
-    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, checkDigitsCount]
     let validator: Validator
     let parser = Parser()
     let numberParsedInfo: Parser.Info

@@ -14,7 +14,7 @@ struct Parser {
                steps: [Int]) throws -> Info {
 
         let numberLength = steps.reduce(0, +)
-        let checkDigitsCount = steps.last ?? 0
+        let checkDigitsCount = steps.last!
 
         var plainNumber: String = number
         var maskedNumber: String = number
