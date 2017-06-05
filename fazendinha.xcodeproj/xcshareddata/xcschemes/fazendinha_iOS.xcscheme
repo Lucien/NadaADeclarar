@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+               BlueprintIdentifier = "DFF227131EE4F3FE0020A582"
                BuildableName = "fazendinha_iOS.framework"
                BlueprintName = "fazendinha_iOS"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF2261D1EE4E3E80020A582"
+               BlueprintIdentifier = "DFF2271B1EE4F3FF0020A582"
                BuildableName = "fazendinha_iOSTests.xctest"
                BlueprintName = "fazendinha_iOSTests"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BlueprintIdentifier = "DFF227131EE4F3FE0020A582"
             BuildableName = "fazendinha_iOS.framework"
             BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BlueprintIdentifier = "DFF227131EE4F3FE0020A582"
             BuildableName = "fazendinha_iOS.framework"
             BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF226151EE4E3E80020A582"
+            BlueprintIdentifier = "DFF227131EE4F3FE0020A582"
             BuildableName = "fazendinha_iOS.framework"
             BlueprintName = "fazendinha_iOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">

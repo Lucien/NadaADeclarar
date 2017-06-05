@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF226311EE4E40F0020A582"
+               BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
                BuildableName = "fazendinha_watchOS.framework"
                BlueprintName = "fazendinha_watchOS"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF226311EE4E40F0020A582"
+            BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
             BuildableName = "fazendinha_watchOS.framework"
             BlueprintName = "fazendinha_watchOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF226311EE4E40F0020A582"
+            BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
             BuildableName = "fazendinha_watchOS.framework"
             BlueprintName = "fazendinha_watchOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">

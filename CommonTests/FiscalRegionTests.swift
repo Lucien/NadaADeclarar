@@ -1,5 +1,5 @@
 import XCTest
-import fazendinha
+@testable import fazendinha
 
 class FiscalRegionTests: XCTestCase {
 

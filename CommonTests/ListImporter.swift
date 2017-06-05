@@ -1,5 +1,5 @@
 import Foundation
-import fazendinha
+@testable import fazendinha
 
 protocol ListImporter {}
 

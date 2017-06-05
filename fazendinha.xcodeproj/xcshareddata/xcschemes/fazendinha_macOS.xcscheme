@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF2265A1EE4E42A0020A582"
+               BlueprintIdentifier = "DFF226F41EE4F3E00020A582"
                BuildableName = "fazendinha_macOS.framework"
                BlueprintName = "fazendinha_macOS"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DFF226621EE4E42B0020A582"
+               BlueprintIdentifier = "DFF226FD1EE4F3E00020A582"
                BuildableName = "fazendinha_macOSTests.xctest"
                BlueprintName = "fazendinha_macOSTests"
                ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF2265A1EE4E42A0020A582"
+            BlueprintIdentifier = "DFF226F41EE4F3E00020A582"
             BuildableName = "fazendinha_macOS.framework"
             BlueprintName = "fazendinha_macOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF2265A1EE4E42A0020A582"
+            BlueprintIdentifier = "DFF226F41EE4F3E00020A582"
             BuildableName = "fazendinha_macOS.framework"
             BlueprintName = "fazendinha_macOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DFF2265A1EE4E42A0020A582"
+            BlueprintIdentifier = "DFF226F41EE4F3E00020A582"
             BuildableName = "fazendinha_macOS.framework"
             BlueprintName = "fazendinha_macOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">

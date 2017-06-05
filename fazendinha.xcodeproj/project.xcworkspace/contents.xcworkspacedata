@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:fazendinha.xcodeproj">
+      location = "self:/Users/avenuecode/dev/lucien/fazendinha/fazendinha.xcodeproj">
    </FileRef>
 </Workspace>

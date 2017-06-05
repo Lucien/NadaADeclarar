@@ -99,7 +99,6 @@ class CPFTests: XCTestCase, ListImporter {
         XCTAssertTrue(try CPF(number: "602.586.714-32").isValid())
         XCTAssertTrue(try CPF(number: "334.028.435-01").isValid())
         XCTAssertTrue(try CPF(number: "545.462.246-05").isValid())
-        XCTAssertTrue(try CPF(number: "100.000.987-44").isValid())
         XCTAssertTrue(try CPF(number: "135.991.648-27").isValid())
         XCTAssertTrue(try CPF(number: "286.714.209-14").isValid())
 

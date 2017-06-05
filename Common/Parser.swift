@@ -49,7 +49,8 @@ struct Parser {
 
             func validateNumbers() throws {
 
-                let parts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet.inverted)
+                parts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet.inverted)
+
                 var counter = 0
                 var completeString = ""
                 for part in parts {

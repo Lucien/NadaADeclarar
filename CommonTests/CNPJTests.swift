@@ -1,5 +1,5 @@
 import XCTest
-import fazendinha
+@testable import fazendinha
 
 class CNPJTests: XCTestCase, ListImporter {
 
@@ -25,5 +25,16 @@ class CNPJTests: XCTestCase, ListImporter {
 
     func testCNPJSet() {
         XCTAssertEqual(self.cnpjList.count, 1001)
+    }
+
+    func testCNPJIsAHeadquarter() {
+
+        XCTAssertTrue(try! CNPJ(number: "26.660.727/0001-99").isHeadquarters)
+        XCTAssertFalse(try! CNPJ(number: "47.583.977/6467-51").isHeadquarters)
+    }
+
+    func testBranchNumber() {
+        XCTAssertEqual(try! CNPJ(number: "26.660.727/0001-99").branchNumber, "0001")
+        XCTAssertEqual(try! CNPJ(number: "47.583.977/6467-51").branchNumber, "6467")
     }
 }

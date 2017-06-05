@@ -19,29 +19,28 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
      - Throws: `InputError.invalidFormat` if the string is not either just 11 numbers (E.g.: XXXXXXXXXXX) or number with
      the CPF mask. (E.g.: XXX.XXX.XXX-XX)
      - Returns: CPF
-
      */
     public init(number: String) throws {
 
         self.numberParsedInfo = try parser.parse(number: number,
-                                                separators: CPF.separators,
-                                                steps: CPF.steps)
+                                                 separators: CPF.separators,
+                                                 steps: CPF.steps)
 
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
     }
 
     public var states: [State] {
-        
+
         return 🇧🇷.states.filter { (state: State) -> Bool in
             return state.fiscalRegion == fiscalRegion
         }
     }
 
-    static let fazendaAlgorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+    public static let fazendaAlgorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
         return T.calcWeightSum(basicNumber: basicNumber)
     }
 
-    public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = CPF.fazendaAlgorythm,
+    public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
                         allSameDigitsAreValid: Bool = false) -> Bool {
 
         return validator.isValid(validationAlgorythm: validationAlgorythm,

@@ -7,27 +7,35 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
 
     public static let checkDigitsCount = 2
     public static let numberLength = 14
-    public let isHeadquarters: Bool
-    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, checkDigitsCount]
+    static let weights = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
+    static let separators: [Character] = [".", ".", "/", "-"]
+    static let steps = [2, 3, 3, 4, checkDigitsCount]
     let validator: Validator
     let parser = Parser()
     let numberParsedInfo: Parser.Info
 
+    /**
+     Creates a CNPJ from a given number
+     - Parameter number: CNPJ number
+     - Throws: `InputError.invalidFormat` if the string is not either just 14 numbers (E.g.: XXXXXXXXXXXXXX) or number with
+     the CPF mask. (E.g.: XX.XXX.XXX/XXXX-XX)
+     - Returns: CNPJ
+     */
     public init(number: String) throws {
 
         self.numberParsedInfo = try parser.parse(number: number,
-                                                separators: [".", ".", "/", "-"],
-                                                steps: [2, 3, 3, 4, 2])
+                                                 separators: CNPJ.separators,
+                                                 steps: CNPJ.steps)
 
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
+    }
 
-        let partsCount = numberParsedInfo.parts.count
-        if partsCount > 1 {
-            let companyNumber = numberParsedInfo.parts[partsCount - 2]
-            self.isHeadquarters = companyNumber == "0001"
-        } else {
-            self.isHeadquarters = false
-        }
+    public var isHeadquarters: Bool {
+        return branchNumber == "0001"
+    }
+
+    public var branchNumber: String {
+        return numberParsedInfo.parts.dropLast().last!
     }
 
     public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
@@ -46,6 +54,5 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
             return CNPJ.calcWeightSum(basicNumber: string)
         }
         return cnpj
-
     }
 }
