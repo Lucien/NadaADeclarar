@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Lucien/fazendinha.svg?branch=master)](https://travis-ci.org/Lucien/fazendinha)
+[![Build Status](https://travis-ci.org/Lucien/fazendinha.svg?branch=master)](https://travis-ci.org/Lucien/fazendinha) [![codecov](https://codecov.io/gh/Lucien/fazendinha/branch/master/graph/badge.svg)](https://codecov.io/gh/Lucien/fazendinha)
 
 # fazendinha
 Swift Library for validation and generation of CPF and CNPJ numbers.
