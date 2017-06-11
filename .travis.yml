@@ -10,7 +10,7 @@ install:
 
 script:
   - xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.3' build test
-  - swiftlint
+  # - swiftlint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
