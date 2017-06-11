@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0900"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
-               BuildableName = "fazendinha_watchOS.framework"
+               BuildableName = "fazendinha.framework"
                BlueprintName = "fazendinha_watchOS"
                ReferencedContainer = "container:fazendinha.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
-            BuildableName = "fazendinha_watchOS.framework"
+            BuildableName = "fazendinha.framework"
             BlueprintName = "fazendinha_watchOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DFF2272F1EE4F4190020A582"
-            BuildableName = "fazendinha_watchOS.framework"
+            BuildableName = "fazendinha.framework"
             BlueprintName = "fazendinha_watchOS"
             ReferencedContainer = "container:fazendinha.xcodeproj">
          </BuildableReference>
