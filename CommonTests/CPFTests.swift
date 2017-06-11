@@ -152,7 +152,7 @@ class CPFTests: XCTestCase, ListImporter {
     func testStatesForFiscalRegion02() throws {
 
         let cpf = try CPF(number: "182.557.422-71")
-        let states = 🇧🇷.states.filter { (state: State) -> Bool in
+        let states = Brazil.states.filter { (state: State) -> Bool in
             return state.fiscalRegion == .fR2
         }
 

@@ -7,7 +7,7 @@ class StateTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        states = 🇧🇷.states
+        states = Brazil.states
     }
 
     func testNumberOfStates() {
