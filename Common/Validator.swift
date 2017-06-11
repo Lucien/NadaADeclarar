@@ -54,9 +54,9 @@ public struct Validator {
 
         }
 
-        v1 = v1 % moduloNumber % (moduloNumber-1)
+        v1 = v1 % moduloNumber % (moduloNumber - 1)
         v2 += v1 * basicNumberLength
-        v2 = v2 % moduloNumber % (moduloNumber-1)
+        v2 = v2 % moduloNumber % (moduloNumber - 1)
 
         return numberParsedInfo.checkDigits == [v1, v2]
     }

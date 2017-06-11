@@ -31,23 +31,16 @@ disabled_rules:
 # - nesting
 # - notification_center_detachment
 # - opening_brace
-- operator_usage_whitespace
 # - operator_whitespace
-- overridden_super_call
-- private_outlet
 # - private_unit_test
-- prohibited_super_call
 # - protocol_property_accessors_order
 # - redundant_discardable_let
-- redundant_nil_coalescing
 # - redundant_optional_initialization
 # - redundant_string_enum_value
 # - redundant_void_return
 # - return_arrow_whitespace
 # - shorthand_operator
-- sorted_imports
 # - statement_position
-- switch_case_on_newline
 # - syntactic_sugar
 # - todo
 # - trailing_comma
@@ -82,6 +75,13 @@ opt_in_rules: # some rules are only opt-in
   - no_extension_access_modifier
   - number_separator
   - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - switch_case_on_newline
 included: # paths to include during linting. `--path` is ignored if present.
   - Common
 excluded: # paths to ignore during linting. Takes precedence over `included`.
@@ -90,25 +90,28 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
 
-
-attributes:
-  severity: error
 closure_end_indentation: error
 closure_spacing: error
 conditional_returns_on_newline: error
 empty_count: error
 explicit_init: error
 explicit_type_interface: error
+force_cast: error
+force_try: error
+
+attributes:
+  severity: error
+
 force_try:
   severity: warning # explicitly
+
 function_body_length:
   warning: 40
   error: 100
+
 function_parameter_count:
   warning: 5
   error: 8
-force_cast: error
-force_try: error
 
 line_length:
   warning: 200
@@ -121,9 +124,6 @@ type_body_length:
 file_length:
   warning: 200
   error: 200
-
-
-
 
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
