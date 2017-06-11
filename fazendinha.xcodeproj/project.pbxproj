@@ -128,6 +128,7 @@
 		DFF227671EE4F4CA0020A582 /* ListImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListImporter.swift; sourceTree = "<group>"; };
 		DFF227681EE4F4CA0020A582 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		DFF227691EE4F4CA0020A582 /* StateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
+		DFF618C41EED84DD0052025D /* README.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = README.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +190,7 @@
 		DFF226EB1EE4F3E00020A582 = {
 			isa = PBXGroup;
 			children = (
+				DFF618C41EED84DD0052025D /* README.playground */,
 				DF9CF74E1EECE4E0005B4A8D /* README.md */,
 				DFF227541EE4F4CA0020A582 /* Common */,
 				DFF2275F1EE4F4CA0020A582 /* CommonTests */,
@@ -560,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n#swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

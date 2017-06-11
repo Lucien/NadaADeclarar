@@ -35,10 +35,21 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
         }
     }
 
+    public var fiscalRegion: FiscalRegion {
+
+        let frRange = Range(uncheckedBounds: (plainNumber.index(plainNumber.endIndex, offsetBy: -3),
+                                              plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
+        // swiftlint:disable force_unwrapping
+        let fiscalRegionValue = Int(plainNumber.substring(with: frRange))!
+        let fiscalRegion = FiscalRegion(rawValue: fiscalRegionValue)!
+        // swiftlint:enable force_unwrapping
+        return fiscalRegion
+    }
+
     public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
         Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
             NumberParsedType.calcWeightSum(basicNumber: basicNumber)
-        }
+    }
 
     public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
                         allSameDigitsAreValid: Bool = false) -> Bool {
@@ -55,14 +66,4 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
         return cpf
     }
 
-    public var fiscalRegion: FiscalRegion {
-
-        let frRange = Range(uncheckedBounds: (plainNumber.index(plainNumber.endIndex, offsetBy: -3),
-                                              plainNumber.index(plainNumber.endIndex, offsetBy: -2)))
-        // swiftlint:disable force_unwrapping
-        let fiscalRegionValue = Int(plainNumber.substring(with: frRange))!
-        let fiscalRegion = FiscalRegion(rawValue: fiscalRegionValue)!
-        // swiftlint:enable force_unwrapping
-        return fiscalRegion
-    }
 }

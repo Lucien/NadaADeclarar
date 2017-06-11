@@ -5,12 +5,15 @@ notifications:
   email: false
 osx_image: xcode8.3
 
-install:
-  - ./install_swiftlint.sh
+before_install:
+  - brew unlink swiftlint
+  - brew uninstall swiftlint
+  - brew install swiftlint
+  - brew update
+  - brew outdated swiftlint || brew upgrade swiftlint
 
 script:
-  - xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator -destination 'platform=platform:iOS Simulator, id:85AF1F51-F2EB-4A4D-930B-0E5761511A45, OS:10.3.1, name:iPhone SE' build test
-  # - swiftlint
+  - xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator build test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
