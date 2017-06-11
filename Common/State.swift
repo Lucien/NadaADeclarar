@@ -14,7 +14,7 @@ extension State: Hashable {
             fiscalRegion.hashValue)
     }
 
-    public static func ==(lhs: State, rhs: State) -> Bool {
+    public static func == (lhs: State, rhs: State) -> Bool {
         return lhs.initials == rhs.initials &&
             lhs.name == rhs.name &&
             lhs.fiscalRegion == rhs.fiscalRegion
@@ -26,8 +26,6 @@ extension State: CustomStringConvertible {
         return "State: \(name) (\(initials)) Fiscal Region: \(fiscalRegion)"
     }
 }
-
-public typealias 🇧🇷 = Brazil
 
 public struct Brazil {
 

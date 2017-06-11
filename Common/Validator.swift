@@ -41,9 +41,9 @@ public struct Validator {
         plainNumber.enumerateSubstrings(in: range,
                                         options: [.byComposedCharacterSequences, .reverse]) {
                                             (enumeratedString: String?,
-                                            substringRange: Range<String.Index>,
-                                            enclosingRange: Range<String.Index>,
-                                            stop: inout Bool) in
+                                            _: Range<String.Index>,
+                                            _: Range<String.Index>,
+                                            _: inout Bool) in
 
                                             if let enumeratedString = enumeratedString {
                                                 let number = Int(enumeratedString)! // swiftlint:disable:this force_unwrapping
@@ -97,7 +97,7 @@ public struct Validator {
         }
         return expectedCheckDigits
     }
-    
+
     public enum ValidationAlgorythm {
         case simple
         case fazenda(weightSumCalculation: (String) -> (Int))

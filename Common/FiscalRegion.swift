@@ -14,7 +14,7 @@ public enum FiscalRegion: Int {
 }
 
 extension FiscalRegion: Equatable {
-    public static func ==(lhs: FiscalRegion, rhs: FiscalRegion) -> Bool {
+    public static func == (lhs: FiscalRegion, rhs: FiscalRegion) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
 }

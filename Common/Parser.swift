@@ -146,7 +146,7 @@ struct Parser {
 extension Parser.Info: Hashable {
     var hashValue: Int {
 
-        let checkDigitsHashValue = checkDigits.reduce(5381) {
+        let checkDigitsHashValue = checkDigits.reduce(5_381) {
             return ($0 << 5) &+ $0 &+ Int($1)
         }.hashValue
 
@@ -154,8 +154,8 @@ extension Parser.Info: Hashable {
             maskedNumber.hashValue ^
             checkDigitsHashValue)
     }
-    
-    static func ==(lhs: Parser.Info, rhs: Parser.Info) -> Bool {
+
+    static func == (lhs: Parser.Info, rhs: Parser.Info) -> Bool {
         return (lhs.plainNumber == rhs.plainNumber &&
             lhs.maskedNumber == rhs.maskedNumber &&
             lhs.checkDigits == rhs.checkDigits &&

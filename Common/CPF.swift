@@ -1,8 +1,8 @@
 import Foundation
 
 public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterface {
-    public typealias T = CPF
-    public typealias F = CPF
+    public typealias NumberParsedType = CPF
+    public typealias FazendinhaNumberType = CPF
 
     public static var checkDigitsCount: Int = 2
     public static var numberLength: Int = 11
@@ -30,14 +30,14 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
 
     public var states: Set<State> {
 
-        return 🇧🇷.states.filter { (state: State) -> Bool in
-            return state.fiscalRegion == fiscalRegion
+        return Brazil.states.filter { (state: State) -> Bool in
+            state.fiscalRegion == fiscalRegion
         }
     }
 
     public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
         Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
-            return T.calcWeightSum(basicNumber: basicNumber)
+            NumberParsedType.calcWeightSum(basicNumber: basicNumber)
         }
 
     public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
@@ -50,7 +50,7 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
     public static func generate() -> CPF {
 
         let cpf = CPF.generate { (string: String) -> (Int) in
-            return CPF.calcWeightSum(basicNumber: string)
+            CPF.calcWeightSum(basicNumber: string)
         }
         return cpf
     }

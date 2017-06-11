@@ -2,8 +2,8 @@ import Foundation
 
 public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterface {
 
-    public typealias T = CNPJ
-    public typealias F = CNPJ
+    public typealias NumberParsedType = CNPJ
+    public typealias FazendinhaNumberType = CNPJ
 
     public static let checkDigitsCount: Int = 2
     public static let numberLength: Int = 14
@@ -40,7 +40,7 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
     public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
 
         let algorythm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
-            return T.calcWeightSum(basicNumber: basicNumber)
+            NumberParsedType.calcWeightSum(basicNumber: basicNumber)
         }
 
         return validator.isValid(validationAlgorythm: algorythm,
@@ -50,7 +50,7 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
     public static func generate() -> CNPJ {
 
         let cnpj = CNPJ.generate { (string: String) -> (Int) in
-            return CNPJ.calcWeightSum(basicNumber: string)
+            CNPJ.calcWeightSum(basicNumber: string)
         }
         return cnpj
     }

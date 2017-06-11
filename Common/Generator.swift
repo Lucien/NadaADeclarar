@@ -1,20 +1,20 @@
 import Foundation
 
 protocol Generatable {
-    associatedtype T: NumberParsedInfoInterface
-    associatedtype F: FazendinhaNumberProtocol
-    static func generate() -> F
+    associatedtype NumberParsedType: NumberParsedInfoInterface
+    associatedtype FazendinhaNumberType: FazendinhaNumberProtocol
+    static func generate() -> FazendinhaNumberType
     static var weights: [Int] { get }
 }
 
 extension Generatable {
 
-    static func generate(weightsSumCalc: (String) -> (Int)) -> F {
+    static func generate(weightsSumCalc: (String) -> (Int)) -> FazendinhaNumberType {
 
         let basicNumber = generateBasicNumber()
 
         let checkDigits = Validator.expectedCheckDigits(fromBasicNumber: basicNumber,
-                                                        checkDigitsCount: T.checkDigitsCount,
+                                                        checkDigitsCount: NumberParsedType.checkDigitsCount,
                                                         calculateWeightsSum: weightsSumCalc)
 
         var number = basicNumber
@@ -22,12 +22,12 @@ extension Generatable {
             number.append(String(checkDigit))
         }
 
-        let fazendinhaType = try! F(number: number) // swiftlint:disable:this force_try
+        let fazendinhaType = try! FazendinhaNumberType(number: number) // swiftlint:disable:this force_try
         return fazendinhaType
     }
 
     static func generateBasicNumber() -> String {
-        let basicNumberLength = T.numberLength - T.checkDigitsCount
+        let basicNumberLength = NumberParsedType.numberLength - NumberParsedType.checkDigitsCount
         var randomNumber = ""
         for _ in 0 ..< basicNumberLength {
             randomNumber += String(arc4random() % 10)
@@ -46,8 +46,8 @@ extension Generatable {
                                         options: [.byComposedCharacterSequences]) {
                                             (enumeratedString: String?,
                                             substringRange: Range<String.Index>,
-                                            enclosingRange: Range<String.Index>,
-                                            stop: inout Bool) in
+                                            _: Range<String.Index>,
+                                            _: inout Bool) in
 
                                             if let enumeratedString = enumeratedString {
                                                 let info = getNumberAndIndex(fromEnumeratedString: enumeratedString,
@@ -58,7 +58,7 @@ extension Generatable {
                                                 sum += info.number * weight
                                             }
         }
-        
+
         return sum
     }
 

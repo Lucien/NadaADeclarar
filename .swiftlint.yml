@@ -19,57 +19,50 @@ disabled_rules:
 # - force_cast
 # - force_try
 # - generic_type_name
-- implicit_getter
-- implicit_return
-- implicitly_unwrapped_optional
-- large_tuple
-- leading_whitespace
-- legacy_cggeometry_functions
-- legacy_constant
-- legacy_constructor
-- legacy_nsgeometry_functions
-- line_length
-- mark
-- nesting
-- nimble_operator
-- no_extension_access_modifier
-- notification_center_detachment
-- number_separator
-- object_literal
-- opening_brace
+# - implicit_getter
+# - large_tuple
+# - leading_whitespace
+# - legacy_cggeometry_functions
+# - legacy_constant
+# - legacy_constructor
+# - legacy_nsgeometry_functions
+# - line_length
+# - mark
+# - nesting
+# - notification_center_detachment
+# - opening_brace
 - operator_usage_whitespace
-- operator_whitespace
+# - operator_whitespace
 - overridden_super_call
 - private_outlet
-- private_unit_test
+# - private_unit_test
 - prohibited_super_call
-- protocol_property_accessors_order
-- redundant_discardable_let
+# - protocol_property_accessors_order
+# - redundant_discardable_let
 - redundant_nil_coalescing
-- redundant_optional_initialization
-- redundant_string_enum_value
-- redundant_void_return
-- return_arrow_whitespace
-- shorthand_operator
+# - redundant_optional_initialization
+# - redundant_string_enum_value
+# - redundant_void_return
+# - return_arrow_whitespace
+# - shorthand_operator
 - sorted_imports
-- statement_position
+# - statement_position
 - switch_case_on_newline
-- syntactic_sugar
-- todo
-- trailing_comma
-- trailing_newline
-- trailing_semicolon
-- trailing_whitespace
-- type_body_length
-- type_name
-- unused_closure_parameter
-- unused_enumerated
-- unused_optional_binding
-- valid_ibinspectable
-- vertical_parameter_alignment
-- vertical_whitespace
-- void_return
-- weak_delegate
+# - syntactic_sugar
+# - todo
+# - trailing_comma
+# - trailing_newline
+# - trailing_semicolon
+# - trailing_whitespace
+# - type_body_length
+# - unused_closure_parameter
+# - unused_enumerated
+# - unused_optional_binding
+# - valid_ibinspectable
+# - vertical_parameter_alignment
+# - vertical_whitespace
+# - void_return
+# - weak_delegate
 
 opt_in_rules: # some rules are only opt-in
   - attributes
@@ -83,6 +76,12 @@ opt_in_rules: # some rules are only opt-in
   - file_header
   - first_where
   - force_unwrapping
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - nimble_operator
+  - no_extension_access_modifier
+  - number_separator
+  - object_literal
 included: # paths to include during linting. `--path` is ignored if present.
   - Common
 excluded: # paths to ignore during linting. Takes precedence over `included`.
@@ -129,7 +128,8 @@ file_length:
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
 type_name:
-  min_length: 4 # only warning
+  min_length:
+    error: 3
   max_length: # warning and error
     warning: 40
     error: 50
