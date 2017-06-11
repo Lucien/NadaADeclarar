@@ -29,10 +29,10 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
     }
 
     public var states: Set<State> {
-
-        return Brazil.states.filter { (state: State) -> Bool in
+        let filtered = Brazil.states.filter { (state: State) -> Bool in
             state.fiscalRegion == fiscalRegion
         }
+        return Set( filtered.map({ $0 }) )
     }
 
     public var fiscalRegion: FiscalRegion {
@@ -49,7 +49,7 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
     public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
         Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
             NumberParsedType.calcWeightSum(basicNumber: basicNumber)
-    }
+        }
 
     public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
                         allSameDigitsAreValid: Bool = false) -> Bool {

@@ -13,7 +13,7 @@ before_install:
   - brew outdated swiftlint || brew upgrade swiftlint
 
 script:
-  - xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -sdk iphonesimulator build test
+  - xcodebuild -scheme fazendinha_iOS -project fazendinha.xcodeproj -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.3' -sdk iphonesimulator build test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
