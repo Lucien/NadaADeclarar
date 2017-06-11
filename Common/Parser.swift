@@ -27,7 +27,7 @@ struct Parser {
         var maskedNumber: String = number
         var parts = [String]()
 
-        let charCount = number.count
+        let charCount = number.characters.count
         if charCount == numberLength {
             try validatePlainChars(input: input, parts: &parts, maskedNumber: &maskedNumber)
         } else if charCount == numberLength + separators.count {
@@ -65,7 +65,7 @@ struct Parser {
             var counter = 0
             var completeString = ""
             for part in parts {
-                if part.count != input.steps[counter] {
+                if part.characters.count != input.steps[counter] {
                     throw InputError.invalidFormat
                 }
                 completeString += part
@@ -103,7 +103,7 @@ struct Parser {
         let plainParts = partsOfNumber(number: input.number, characterSetToSkip: decimalDigitsCharSet.inverted)
 
         guard var number: String = plainParts.first,
-            number.count == numberLength,
+            number.characters.count == numberLength,
             number == input.number else {
                 throw InputError.invalidFormat
         }

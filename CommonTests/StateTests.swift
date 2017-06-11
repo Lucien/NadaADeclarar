@@ -11,7 +11,7 @@ class StateTests: XCTestCase {
     }
 
     func testNumberOfStates() {
-        XCTAssertEqual(states.count, 27)
+        XCTAssertEqual(states.characters.count, 27)
     }
 
     func testDescription() {

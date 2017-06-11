@@ -24,7 +24,7 @@ class CNPJTests: XCTestCase, ListImporter {
     }
 
     func testCNPJSet() {
-        XCTAssertEqual(self.cnpjList.count, 1001)
+        XCTAssertEqual(self.cnpjList.characters.count, 1001)
     }
 
     func testCNPJIsAHeadquarter() {

@@ -8,7 +8,7 @@ class CPFTests: XCTestCase, ListImporter {
     }()
 
     func testCPFSet() {
-        XCTAssertEqual(cpfGroup.count, 1001)
+        XCTAssertEqual(cpfGroup.characters.count, 1001)
     }
 
     func testCheckDigits() {
