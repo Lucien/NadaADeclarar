@@ -65,5 +65,4 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
         }
         return cpf
     }
-
 }
