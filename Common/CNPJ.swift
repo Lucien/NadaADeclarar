@@ -23,9 +23,8 @@ public struct CNPJ: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInter
      */
     public init(number: String) throws {
 
-        self.numberParsedInfo = try parser.parse(number: number,
-                                                 separators: CNPJ.separators,
-                                                 steps: CNPJ.steps)
+        let input = Parser.Input(number: number, separators: CNPJ.separators, steps: CNPJ.steps)
+        self.numberParsedInfo = try parser.parse(input: input)
 
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
     }

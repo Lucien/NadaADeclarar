@@ -100,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF9CF74E1EECE4E0005B4A8D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DFF226F51EE4F3E00020A582 /* fazendinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF226FE1EE4F3E00020A582 /* fazendinha_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fazendinha_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF227141EE4F3FE0020A582 /* fazendinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fazendinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +189,7 @@
 		DFF226EB1EE4F3E00020A582 = {
 			isa = PBXGroup;
 			children = (
+				DF9CF74E1EECE4E0005B4A8D /* README.md */,
 				DFF227541EE4F4CA0020A582 /* Common */,
 				DFF2275F1EE4F4CA0020A582 /* CommonTests */,
 				DFF226F61EE4F3E00020A582 /* Products */,
@@ -332,6 +334,7 @@
 				DFF227101EE4F3FE0020A582 /* Frameworks */,
 				DFF227111EE4F3FE0020A582 /* Headers */,
 				DFF227121EE4F3FE0020A582 /* Resources */,
+				DF9CF74F1EECE706005B4A8D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -543,6 +546,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DF9CF74F1EECE706005B4A8D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFF226F01EE4F3E00020A582 /* Sources */ = {

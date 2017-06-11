@@ -22,14 +22,13 @@ public struct CPF: FazendinhaNumberProtocol, Generatable, NumberParsedInfoInterf
      */
     public init(number: String) throws {
 
-        self.numberParsedInfo = try parser.parse(number: number,
-                                                 separators: CPF.separators,
-                                                 steps: CPF.steps)
+        let input = Parser.Input(number: number, separators: CPF.separators, steps: CPF.steps)
+        self.numberParsedInfo = try parser.parse(input: input)
 
         self.validator = Validator(numberParsedInfo: numberParsedInfo)
     }
 
-    public var states: [State] {
+    public var states: Set<State> {
 
         return 🇧🇷.states.filter { (state: State) -> Bool in
             return state.fiscalRegion == fiscalRegion

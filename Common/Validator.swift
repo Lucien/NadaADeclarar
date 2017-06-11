@@ -31,7 +31,7 @@ public struct Validator {
 
         let upperBound = plainNumber.index(plainNumber.endIndex, offsetBy: -checkDigitsCount)
         let range = Range(uncheckedBounds: (plainNumber.startIndex, upper: upperBound))
-        let basicNumberLength = plainNumber.characters.count - checkDigitsCount
+        let basicNumberLength = plainNumber.count - checkDigitsCount
 
         var v1 = 0
         let moduloNumber = 11

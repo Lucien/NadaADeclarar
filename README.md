@@ -29,4 +29,4 @@ let cpf = CPF.generate()
 
 ## Detailed
 
-![image](https://image.ibb.co/eOBROF/Screen_Shot_2017_06_04_at_18_13_37.png)
+

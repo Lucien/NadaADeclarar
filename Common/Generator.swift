@@ -40,7 +40,7 @@ extension Generatable {
         var sum = 0
         let range = Range(uncheckedBounds: (basicNumber.startIndex, upper: basicNumber.endIndex))
 
-        let subWeights = Array(weights.dropFirst(weights.count - basicNumber.characters.count))
+        let subWeights = Array(weights.dropFirst(weights.count - basicNumber.count))
 
         basicNumber.enumerateSubstrings(in: range,
                                         options: [.byComposedCharacterSequences]) {
