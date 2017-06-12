@@ -12,16 +12,15 @@ Swift Library for validation and generation of CPF and CNPJ numbers.
 
 # Usage
 
-## Basic
 
-### Validation
+## Validation
 
 ```swift
 let cpf = try! CPF(number: "51135733961") // number can also be in the format XXX.XXX.XXX-XX
 cpf.isValid() // true
 ```
 
-### Generation
+## Generation
 
 ```
 let cpf = CPF.generate()

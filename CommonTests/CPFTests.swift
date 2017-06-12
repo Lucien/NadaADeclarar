@@ -8,7 +8,7 @@ class CPFTests: XCTestCase, ListImporter {
     }()
 
     func testCPFSet() {
-        XCTAssertEqual(cpfGroup.characters.count, 1001)
+        XCTAssertEqual(cpfGroup.count, 1001)
     }
 
     func testCheckDigits() {
@@ -155,8 +155,9 @@ class CPFTests: XCTestCase, ListImporter {
         let states = Brazil.states.filter { (state: State) -> Bool in
             return state.fiscalRegion == .fR2
         }
+        let statesSet = Set( states.map({ $0 }) )
 
-        XCTAssertEqual(cpf.states, states)
+        XCTAssertEqual(cpf.states, statesSet)
     }
 
     func testCPFGeneration() {
