@@ -25,3 +25,8 @@ let cpf = CPF.generate()
 ```
 
 Check out more on [Playgrounds](README.playground)
+
+# Memes
+![](https://static.poder360.com.br/2024/03/prismada-irpf-memes-1-15mar2024.png)
+![](https://static.poder360.com.br/2024/03/prismada-irpf-memes-3-15mar2024.png)
+![](https://i.pinimg.com/736x/ce/fd/57/cefd57f6b5e2ac84db7496e3f4c031e2.jpg)
