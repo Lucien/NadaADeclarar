@@ -1,22 +1,41 @@
 import Foundation
 
-struct Parser {
+/// A structure that handles parsing of formatted numbers and extracts useful information.
+public struct Parser {
 
+    /// A structure that holds the parsed information of a number.
     struct Info {
+        /// The plain number without any separators.
         let plainNumber: String
+
+        /// The masked number with separators included.
         let maskedNumber: String
+
+        /// An array of integers representing the check digits of the number.
         let checkDigits: [Int]
+
+        /// An array of strings representing different parts of the number.
         let parts: [String]
     }
 
+    /// A structure that holds the input details required for parsing a number.
     struct Input {
+        /// The number as a string to be parsed.
         let number: String
+
+        /// An array of characters representing the separators used in the masked number.
         let separators: [Character]
+
+        /// An array of integers representing the number of digits in each part of the number.
         let steps: [Int]
     }
 
+    /// Parses the input number and returns the parsed information.
+    ///
+    /// - Parameter input: The input details required for parsing.
+    /// - Throws: `Parser.InputError.invalidFormat` if the input number does not match the expected format.
+    /// - Returns: The parsed information as a `Parser.Info` object.
     func parse(input: Input) throws -> Info {
-
         let steps = input.steps
         let number = input.number
         let separators = input.separators
@@ -27,7 +46,7 @@ struct Parser {
         var maskedNumber: String = number
         var parts = [String]()
 
-        let charCount = number.characters.count
+        let charCount = number.count
         if charCount == numberLength {
             try validatePlainChars(input: input, parts: &parts, maskedNumber: &maskedNumber)
         } else if charCount == numberLength + separators.count {
@@ -36,11 +55,13 @@ struct Parser {
             throw InputError.invalidFormat
         }
 
-        // check digits
-        let checkDigitsString = plainNumber.substring(from: plainNumber.index(plainNumber.endIndex,
-                                                                              offsetBy: -checkDigitsCount))
+        // Extract check digits
+        let startIndex = plainNumber.index(plainNumber.endIndex, offsetBy: -checkDigitsCount)
+        let checkDigitsSubstring = plainNumber[startIndex...]
+        let checkDigitsString = String(checkDigitsSubstring)
+
         var checkDigits = [Int]()
-        for char in checkDigitsString.characters {
+        for char in checkDigitsString {
             let checkDigit = Int(String(char))! // swiftlint:disable:this force_unwrapping
             checkDigits.append(checkDigit)
         }
@@ -51,21 +72,26 @@ struct Parser {
                     parts: parts)
     }
 
+    /// Validates the characters of the masked number and extracts its parts.
+    ///
+    /// - Parameters:
+    ///   - input: The input details required for parsing.
+    ///   - parts: The array to store the parts of the number.
+    ///   - plainNumber: The plain number without any separators.
+    /// - Throws: `InputError.invalidFormat` if the input number does not match the expected format.
     func validateMaskedChars(input: Input,
                              parts: inout [String],
                              plainNumber: inout String) throws {
-
         let number = input.number
         let decimalDigitsCharSet = CharacterSet.decimalDigits
 
         func validateNumbers() throws {
-
             parts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet.inverted)
 
             var counter = 0
             var completeString = ""
             for part in parts {
-                if part.characters.count != input.steps[counter] {
+                if part.count != input.steps[counter] {
                     throw InputError.invalidFormat
                 }
                 completeString += part
@@ -75,12 +101,10 @@ struct Parser {
         }
 
         func validateSeparators() throws {
-
             let parts = partsOfNumber(number: number, characterSetToSkip: decimalDigitsCharSet)
             var counter = 0
             for part in parts {
-
-                if part.characters.first != input.separators[counter] {
+                if part.first != input.separators[counter] {
                     throw InputError.invalidFormat
                 }
                 counter += 1
@@ -91,10 +115,16 @@ struct Parser {
         try validateSeparators()
     }
 
+    /// Validates the characters of the plain number and constructs the masked number.
+    ///
+    /// - Parameters:
+    ///   - input: The input details required for parsing.
+    ///   - parts: The array to store the parts of the number.
+    ///   - maskedNumber: The masked number with separators included.
+    /// - Throws: `InputError.invalidFormat` if the input number does not match the expected format.
     func validatePlainChars(input: Input,
                             parts: inout [String],
                             maskedNumber: inout String) throws {
-
         let steps = input.steps
         let separators = input.separators
         let numberLength = steps.reduce(0, +)
@@ -103,14 +133,13 @@ struct Parser {
         let plainParts = partsOfNumber(number: input.number, characterSetToSkip: decimalDigitsCharSet.inverted)
 
         guard var number: String = plainParts.first,
-            number.characters.count == numberLength,
-            number == input.number else {
-                throw InputError.invalidFormat
+              number.count == numberLength,
+              number == input.number else {
+            throw InputError.invalidFormat
         }
 
         var offset = 0
         for i in 0..<separators.count {
-
             offset += steps[i] + (i == 0 ? 0 : 1)
             let separator = separators[i]
 
@@ -122,43 +151,46 @@ struct Parser {
         parts = partsOfNumber(number: maskedNumber, characterSetToSkip: decimalDigitsCharSet)
     }
 
+    /// Splits the number into parts based on the character set to be skipped.
+    ///
+    /// - Parameters:
+    ///   - number: The number to be split into parts.
+    ///   - characterSetToSkip: The character set to be skipped while splitting.
+    /// - Returns: An array of strings representing the parts of the number.
     func partsOfNumber(number: String, characterSetToSkip: CharacterSet) -> [String] {
-
         let scanner = Scanner(string: number)
         scanner.charactersToBeSkipped = characterSetToSkip
         var parts: [String] = []
         var part: NSString?
         while scanner.scanUpToCharacters(from: characterSetToSkip,
                                          into: &part) {
-
-                                            if let part = part {
-                                                parts.append(part as String)
-                                            }
+            if let part = part {
+                parts.append(part as String)
+            }
         }
         return parts
     }
 
+    /// Enum representing the possible errors that can occur during input validation.
     public enum InputError: Error {
         case invalidFormat
     }
 }
 
 extension Parser.Info: Hashable {
-    var hashValue: Int {
-
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(plainNumber)
+        hasher.combine(maskedNumber)
         let checkDigitsHashValue = checkDigits.reduce(5_381) {
             return ($0 << 5) &+ $0 &+ Int($1)
-        }.hashValue
-
-        return (plainNumber.hashValue ^
-            maskedNumber.hashValue ^
-            checkDigitsHashValue)
+        }
+        hasher.combine(checkDigitsHashValue)
     }
 
     static func == (lhs: Parser.Info, rhs: Parser.Info) -> Bool {
         return (lhs.plainNumber == rhs.plainNumber &&
-            lhs.maskedNumber == rhs.maskedNumber &&
-            lhs.checkDigits == rhs.checkDigits &&
-            lhs.parts == rhs.parts)
+                lhs.maskedNumber == rhs.maskedNumber &&
+                lhs.checkDigits == rhs.checkDigits &&
+                lhs.parts == rhs.parts)
     }
 }

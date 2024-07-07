@@ -1,16 +1,15 @@
 import Foundation
-@testable import fazendinha
+@testable import NadaADeclarar
 
 protocol ListImporter {}
 
 extension ListImporter {
 
-    static func generatedNumberList<T>() -> Set<T> where T: FazendinhaNumberProtocol {
-
-        let bundle = Bundle(for: CPFTests.self)
+    static func generatedNumberList<T>() -> Set<T> where T: NadaADeclararNumberProtocol {
 
         let resource = "Generated\(String(describing: T.self))List"
-        let path = bundle.path(forResource: resource, ofType: "txt")
+        let path = Bundle.module.path(forResource: resource, ofType: "txt")
+
         let generatedCPFs = try! String(contentsOfFile: path!)
         let stringList = generatedCPFs.components(separatedBy: CharacterSet.newlines).dropLast()
 
