@@ -1,10 +1,9 @@
 import XCTest
-@testable import fazendinha
+@testable import NadaADeclarar
 
 class FiscalRegionTests: XCTestCase {
 
     func testInvalidFiscalRegion() {
-
         let fiscalRegion = FiscalRegion(rawValue: 10)
         XCTAssertNil(fiscalRegion)
     }

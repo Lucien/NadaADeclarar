@@ -1,5 +1,5 @@
 import XCTest
-@testable import fazendinha
+@testable import NadaADeclarar
 
 class CNPJTests: XCTestCase, ListImporter {
 
@@ -17,7 +17,7 @@ class CNPJTests: XCTestCase, ListImporter {
     }
 
     func testGenerateCNPJ() {
-        
+
         for _ in 0...1000 {
             XCTAssertTrue(CNPJ.generate().isValid())
         }
@@ -28,7 +28,6 @@ class CNPJTests: XCTestCase, ListImporter {
     }
 
     func testCNPJIsAHeadquarter() {
-
         XCTAssertTrue(try! CNPJ(number: "26.660.727/0001-99").isHeadquarters)
         XCTAssertFalse(try! CNPJ(number: "47.583.977/6467-51").isHeadquarters)
     }

@@ -1,7 +1,4 @@
-import Foundation
-
-public protocol FazendinhaNumberProtocol {
-
+public protocol NadaADeclararNumberProtocol {
     init(number: String) throws
 
     var checkDigits: [Int] { get }
@@ -28,8 +25,8 @@ extension NumberParsedInfoInterface {
         return numberParsedInfo.checkDigits
     }
 
-    public var hashValue: Int {
-        return numberParsedInfo.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(numberParsedInfo)
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {

@@ -1,5 +1,5 @@
 import XCTest
-@testable import fazendinha
+@testable import NadaADeclarar
 
 class StateTests: XCTestCase {
 
@@ -16,8 +16,8 @@ class StateTests: XCTestCase {
 
     func testDescription() {
 
-        let state = State(initials: "HUE", name: "Hueland", fiscalRegion: .fR1)
-        XCTAssertEqual(state.description, "State: Hueland (HUE) Fiscal Region: fR1")
+        let state = State(initials: "HUE", name: "Hueland", fiscalRegion: .RF01)
+        XCTAssertEqual(state.description, "State: Hueland (HUE) Fiscal Region: RF01")
     }
 
     func testAcre() {
@@ -26,7 +26,7 @@ class StateTests: XCTestCase {
         }.first!
 
         XCTAssertEqual(state.name, "Acre")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testAlagoas() {
@@ -35,7 +35,7 @@ class StateTests: XCTestCase {
             return state.initials == "AL"
             }.first!
         XCTAssertEqual(state.name, "Alagoas")
-        XCTAssertEqual(state.fiscalRegion, .fR4)
+        XCTAssertEqual(state.fiscalRegion, .RF04)
     }
 
     func testAmapa() {
@@ -44,7 +44,7 @@ class StateTests: XCTestCase {
             return state.initials == "AP"
             }.first!
         XCTAssertEqual(state.name, "Amapá")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testAmazonas() {
@@ -53,7 +53,7 @@ class StateTests: XCTestCase {
             return state.initials == "AM"
             }.first!
         XCTAssertEqual(state.name, "Amazonas")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testBahia() {
@@ -62,7 +62,7 @@ class StateTests: XCTestCase {
             return state.initials == "BA"
             }.first!
         XCTAssertEqual(state.name, "Bahia")
-        XCTAssertEqual(state.fiscalRegion, .fR5)
+        XCTAssertEqual(state.fiscalRegion, .RF05)
     }
 
     func testCeara() {
@@ -71,7 +71,7 @@ class StateTests: XCTestCase {
             return state.initials == "CE"
             }.first!
         XCTAssertEqual(state.name, "Ceará")
-        XCTAssertEqual(state.fiscalRegion, .fR3)
+        XCTAssertEqual(state.fiscalRegion, .RF03)
     }
 
     func testBrasilia() {
@@ -80,7 +80,7 @@ class StateTests: XCTestCase {
             return state.initials == "DF"
             }.first!
         XCTAssertEqual(state.name, "Brasília")
-        XCTAssertEqual(state.fiscalRegion, .fR1)
+        XCTAssertEqual(state.fiscalRegion, .RF01)
     }
 
     func testEspiritoSanto() {
@@ -89,7 +89,7 @@ class StateTests: XCTestCase {
             return state.initials == "ES"
             }.first!
         XCTAssertEqual(state.name, "Espírito Santo")
-        XCTAssertEqual(state.fiscalRegion, .fR7)
+        XCTAssertEqual(state.fiscalRegion, .RF07)
     }
 
     func testGoias() {
@@ -98,7 +98,7 @@ class StateTests: XCTestCase {
             return state.initials == "GO"
             }.first!
         XCTAssertEqual(state.name, "Goiás")
-        XCTAssertEqual(state.fiscalRegion, .fR1)
+        XCTAssertEqual(state.fiscalRegion, .RF01)
     }
 
     func testMaranhao() {
@@ -107,7 +107,7 @@ class StateTests: XCTestCase {
             return state.initials == "MA"
             }.first!
         XCTAssertEqual(state.name, "Maranhão")
-        XCTAssertEqual(state.fiscalRegion, .fR3)
+        XCTAssertEqual(state.fiscalRegion, .RF03)
     }
 
     func testMatoGrosso() {
@@ -116,7 +116,7 @@ class StateTests: XCTestCase {
             return state.initials == "MT"
             }.first!
         XCTAssertEqual(state.name, "Mato Grosso")
-        XCTAssertEqual(state.fiscalRegion, .fR1)
+        XCTAssertEqual(state.fiscalRegion, .RF01)
     }
 
     func testMatoGrossoDoSul() {
@@ -125,7 +125,7 @@ class StateTests: XCTestCase {
             return state.initials == "MS"
             }.first!
         XCTAssertEqual(state.name, "Mato Grosso do Sul")
-        XCTAssertEqual(state.fiscalRegion, .fR1)
+        XCTAssertEqual(state.fiscalRegion, .RF01)
     }
 
     func testMinasGerais() {
@@ -134,7 +134,7 @@ class StateTests: XCTestCase {
             return state.initials == "MG"
             }.first!
         XCTAssertEqual(state.name, "Minas Gerais")
-        XCTAssertEqual(state.fiscalRegion, .fR6)
+        XCTAssertEqual(state.fiscalRegion, .RF06)
     }
 
     func testPara() {
@@ -143,7 +143,7 @@ class StateTests: XCTestCase {
             return state.initials == "PA"
             }.first!
         XCTAssertEqual(state.name, "Pará")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testParaiba() {
@@ -152,7 +152,7 @@ class StateTests: XCTestCase {
             return state.initials == "PB"
             }.first!
         XCTAssertEqual(state.name, "Paraíba")
-        XCTAssertEqual(state.fiscalRegion, .fR4)
+        XCTAssertEqual(state.fiscalRegion, .RF04)
     }
 
     func testParana() {
@@ -161,7 +161,7 @@ class StateTests: XCTestCase {
             return state.initials == "PR"
             }.first!
         XCTAssertEqual(state.name, "Paraná")
-        XCTAssertEqual(state.fiscalRegion, .fR9)
+        XCTAssertEqual(state.fiscalRegion, .RF09)
     }
 
     func testPernambuco() {
@@ -170,7 +170,7 @@ class StateTests: XCTestCase {
             return state.initials == "PE"
             }.first!
         XCTAssertEqual(state.name, "Pernambuco")
-        XCTAssertEqual(state.fiscalRegion, .fR4)
+        XCTAssertEqual(state.fiscalRegion, .RF04)
     }
 
     func testPiaui() {
@@ -179,7 +179,7 @@ class StateTests: XCTestCase {
             return state.initials == "PI"
             }.first!
         XCTAssertEqual(state.name, "Piauí")
-        XCTAssertEqual(state.fiscalRegion, .fR3)
+        XCTAssertEqual(state.fiscalRegion, .RF03)
     }
 
     func testRioDeJaneiro() {
@@ -188,7 +188,7 @@ class StateTests: XCTestCase {
             return state.initials == "RJ"
             }.first!
         XCTAssertEqual(state.name, "Rio de Janeiro")
-        XCTAssertEqual(state.fiscalRegion, .fR7)
+        XCTAssertEqual(state.fiscalRegion, .RF07)
     }
 
     func testRioGrandeDoNorte() {
@@ -197,7 +197,7 @@ class StateTests: XCTestCase {
             return state.initials == "RN"
             }.first!
         XCTAssertEqual(state.name, "Rio Grande do Norte")
-        XCTAssertEqual(state.fiscalRegion, .fR4)
+        XCTAssertEqual(state.fiscalRegion, .RF04)
     }
 
     func testRioGrandeDoSul() {
@@ -206,7 +206,7 @@ class StateTests: XCTestCase {
             return state.initials == "RS"
             }.first!
         XCTAssertEqual(state.name, "Rio Grande do Sul")
-        XCTAssertEqual(state.fiscalRegion, .fR10)
+        XCTAssertEqual(state.fiscalRegion, .RF10)
     }
 
     func testRondonia() {
@@ -215,7 +215,7 @@ class StateTests: XCTestCase {
             return state.initials == "RO"
             }.first!
         XCTAssertEqual(state.name, "Rondônia")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testRoraima() {
@@ -224,7 +224,7 @@ class StateTests: XCTestCase {
             return state.initials == "RR"
             }.first!
         XCTAssertEqual(state.name, "Roraima")
-        XCTAssertEqual(state.fiscalRegion, .fR2)
+        XCTAssertEqual(state.fiscalRegion, .RF02)
     }
 
     func testSantaCatarina() {
@@ -233,7 +233,7 @@ class StateTests: XCTestCase {
             return state.initials == "SC"
             }.first!
         XCTAssertEqual(state.name, "Santa Catarina")
-        XCTAssertEqual(state.fiscalRegion, .fR9)
+        XCTAssertEqual(state.fiscalRegion, .RF09)
     }
 
     func testSaoPaulo() {
@@ -242,7 +242,7 @@ class StateTests: XCTestCase {
             return state.initials == "SP"
             }.first!
         XCTAssertEqual(state.name, "São Paulo")
-        XCTAssertEqual(state.fiscalRegion, .fR8)
+        XCTAssertEqual(state.fiscalRegion, .RF08)
     }
 
     func testSergipe() {
@@ -251,7 +251,7 @@ class StateTests: XCTestCase {
             return state.initials == "SE"
             }.first!
         XCTAssertEqual(state.name, "Sergipe")
-        XCTAssertEqual(state.fiscalRegion, .fR5)
+        XCTAssertEqual(state.fiscalRegion, .RF05)
     }
     
     func testTocantins() {
@@ -260,6 +260,6 @@ class StateTests: XCTestCase {
             return state.initials == "TO"
             }.first!
         XCTAssertEqual(state.name, "Tocantins")
-        XCTAssertEqual(state.fiscalRegion, .fR1)
+        XCTAssertEqual(state.fiscalRegion, .RF01)
     }
 }

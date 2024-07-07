@@ -1,5 +1,5 @@
 import XCTest
-@testable import fazendinha
+@testable import NadaADeclarar
 
 class CPFTests: XCTestCase, ListImporter {
 
@@ -8,10 +8,12 @@ class CPFTests: XCTestCase, ListImporter {
     }()
 
     func testCPFSet() {
+
         XCTAssertEqual(cpfGroup.count, 1001)
     }
 
     func testCheckDigits() {
+
         let cpf = try! CPF(number: "125.609.581-80")
         XCTAssertEqual(cpf.checkDigits, [8, 0])
     }
@@ -72,7 +74,6 @@ class CPFTests: XCTestCase, ListImporter {
 
     func testInvalidCPFsUsingFazendaAlgorythm() throws {
 
-
         XCTAssertFalse(try CPF(number: "000.000.000-00").isValid())
         XCTAssertFalse(try CPF(number: "111.111.111-11").isValid())
         XCTAssertFalse(try CPF(number: "222.222.222-22").isValid())
@@ -106,7 +107,7 @@ class CPFTests: XCTestCase, ListImporter {
         XCTAssertTrue(try CPF(number: "704.881.802-60").isValid())
         XCTAssertTrue(try CPF(number: "508.584.317-77").isValid())
         XCTAssertTrue(try CPF(number: "517.531.566-88").isValid())
-        
+
         XCTAssertTrue(try CPF(number: "050.505.834-03").isValid())
         XCTAssertTrue(try CPF(number: "337.718.534-86").isValid())
         XCTAssertTrue(try CPF(number: "827.525.778-69").isValid())
@@ -137,23 +138,22 @@ class CPFTests: XCTestCase, ListImporter {
     }
 
     func testFiscalRegion() throws {
-        XCTAssertEqual(try CPF(number: "000.000.000-00").fiscalRegion, FiscalRegion.fR10)
-        XCTAssertEqual(try CPF(number: "111.111.111-11").fiscalRegion, FiscalRegion.fR1)
-        XCTAssertEqual(try CPF(number: "222.222.222-22").fiscalRegion, FiscalRegion.fR2)
-        XCTAssertEqual(try CPF(number: "333.333.333-33").fiscalRegion, FiscalRegion.fR3)
-        XCTAssertEqual(try CPF(number: "444.444.444-44").fiscalRegion, FiscalRegion.fR4)
-        XCTAssertEqual(try CPF(number: "555.555.555-55").fiscalRegion, FiscalRegion.fR5)
-        XCTAssertEqual(try CPF(number: "666.666.666-66").fiscalRegion, FiscalRegion.fR6)
-        XCTAssertEqual(try CPF(number: "777.777.777-77").fiscalRegion, FiscalRegion.fR7)
-        XCTAssertEqual(try CPF(number: "888.888.888-88").fiscalRegion, FiscalRegion.fR8)
-        XCTAssertEqual(try CPF(number: "999.999.999-99").fiscalRegion, FiscalRegion.fR9)
+        XCTAssertEqual(try CPF(number: "000.000.000-00").fiscalRegion, FiscalRegion.RF10)
+        XCTAssertEqual(try CPF(number: "111.111.111-11").fiscalRegion, FiscalRegion.RF01)
+        XCTAssertEqual(try CPF(number: "222.222.222-22").fiscalRegion, FiscalRegion.RF02)
+        XCTAssertEqual(try CPF(number: "333.333.333-33").fiscalRegion, FiscalRegion.RF03)
+        XCTAssertEqual(try CPF(number: "444.444.444-44").fiscalRegion, FiscalRegion.RF04)
+        XCTAssertEqual(try CPF(number: "555.555.555-55").fiscalRegion, FiscalRegion.RF05)
+        XCTAssertEqual(try CPF(number: "666.666.666-66").fiscalRegion, FiscalRegion.RF06)
+        XCTAssertEqual(try CPF(number: "777.777.777-77").fiscalRegion, FiscalRegion.RF07)
+        XCTAssertEqual(try CPF(number: "888.888.888-88").fiscalRegion, FiscalRegion.RF08)
+        XCTAssertEqual(try CPF(number: "999.999.999-99").fiscalRegion, FiscalRegion.RF09)
     }
 
     func testStatesForFiscalRegion02() throws {
-
         let cpf = try CPF(number: "182.557.422-71")
         let states = Brazil.states.filter { (state: State) -> Bool in
-            return state.fiscalRegion == .fR2
+            return state.fiscalRegion == .RF02
         }
         let statesSet = Set( states.map({ $0 }) )
 
@@ -161,7 +161,6 @@ class CPFTests: XCTestCase, ListImporter {
     }
 
     func testCPFGeneration() {
-
         for _ in 1...1000 {
             let cpf = CPF.generate()
             XCTAssertTrue(cpf.isValid())
@@ -174,24 +173,10 @@ class CPFTests: XCTestCase, ListImporter {
         }
     }
 
-    func testCPFValidationUsingFazendaMethod() {
-        for cpf in self.cpfGroup {
-            XCTAssertTrue(cpf.isValid())
-        }
-    }
-
     func testSimpleAlgorithmsSpeed() throws {
         measure {
             for cpf in self.cpfGroup {
                 _ = cpf.isValid(validationAlgorythm: Validator.ValidationAlgorythm.simple)
-            }
-        }
-    }
-
-    func testFazendaAlgorythmSpeed() throws {
-        measure {
-            for cpf in self.cpfGroup {
-                _ = cpf.isValid()
             }
         }
     }
