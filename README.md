@@ -29,11 +29,9 @@ Swift Library for validation and generation of CPF and CNPJ numbers 🇧🇷.
 
 ## Generation
 
-```
+```swift
 let cpf = CPF.generate()
 ```
-
-Check out more on [Playgrounds](README.playground)
 
 # Badges
 
