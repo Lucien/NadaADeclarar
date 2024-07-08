@@ -83,9 +83,9 @@ opt_in_rules: # some rules are only opt-in
   - sorted_imports
   - switch_case_on_newline
 included: # paths to include during linting. `--path` is ignored if present.
-  - NadaADeclarar
+  - Sources
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - NadaADeclararTests
+  - Sources/NadaADeclararTests
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
