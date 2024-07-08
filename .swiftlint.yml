@@ -64,7 +64,7 @@ opt_in_rules: # some rules are only opt-in
   - conditional_returns_on_newline
   - empty_count
   - explicit_init
-  - explicit_type_interface
+  # - explicit_type_interface
   - fatal_error_message
   - file_header
   - first_where
@@ -95,7 +95,6 @@ closure_spacing: error
 conditional_returns_on_newline: error
 empty_count: error
 explicit_init: error
-explicit_type_interface: error
 force_cast: error
 
 attributes:
