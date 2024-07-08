@@ -42,7 +42,7 @@ extension Generatable {
         let basicNumberLength = NumberParsedType.numberLength - NumberParsedType.checkDigitsCount
         var randomNumber = ""
         for _ in 0 ..< basicNumberLength {
-            randomNumber += String(arc4random() % 10)
+            randomNumber += String(Int.random(in: 0...9))
         }
         return randomNumber
     }
