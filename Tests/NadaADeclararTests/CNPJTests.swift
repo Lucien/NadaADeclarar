@@ -12,14 +12,14 @@ class CNPJTests: XCTestCase, ListImporter {
 
     func testValidCNPJ() throws {
         for cnpj in self.cnpjList {
-            XCTAssertTrue(cnpj.isValid())
+            XCTAssertTrue(cnpj.isValid)
         }
     }
 
     func testGenerateCNPJ() {
 
         for _ in 0...1000 {
-            XCTAssertTrue(CNPJ.generate().isValid())
+            XCTAssertTrue(CNPJ.generate().isValid)
         }
     }
 

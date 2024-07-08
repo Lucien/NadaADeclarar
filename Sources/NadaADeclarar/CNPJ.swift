@@ -59,12 +59,21 @@ public struct CNPJ: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoIn
     }
 
     /**
+     Indicates whether the CNPJ is valid.
+
+     - Returns: `true` if the CNPJ is valid, `false` otherwise.
+     */
+    public var isValid: Bool {
+        isValid(allSameDigitsAreValid: false)
+    }
+
+    /**
      Validates the CNPJ using the specified algorithm.
 
      - Parameter allSameDigitsAreValid: A flag indicating whether a CNPJ with all same digits is considered valid. Defaults to `false`.
      - Returns: `true` if the CNPJ is valid; otherwise, `false`.
      */
-    public func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
+    func isValid(allSameDigitsAreValid: Bool = false) -> Bool {
         let algorithm = Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
             NumberParsedType.calcWeightSum(basicNumber: basicNumber)
         }

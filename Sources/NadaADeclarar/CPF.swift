@@ -81,6 +81,20 @@ public struct CPF: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoInt
     }
 
     /**
+     Indicates whether the CPF is valid.
+
+     - Returns: `true` if the CPF is valid, `false` otherwise.
+     */
+    public var isValid: Bool {
+        isValid(validationAlgorythm: .simple, allSameDigitsAreValid: false)
+    }
+
+    public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
+    Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
+        NumberParsedType.calcWeightSum(basicNumber: basicNumber)
+    }
+
+    /**
      Validates the CPF.
 
      - Parameters:
@@ -88,14 +102,9 @@ public struct CPF: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoInt
      - allSameDigitsAreValid: A flag indicating whether a CPF with all same digits is valid. Defaults to `false`.
      - Returns: `true` if the CPF is valid, `false` otherwise.
      */
-    public func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
+    func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
                         allSameDigitsAreValid: Bool = false) -> Bool {
         return validator.isValid(validationAlgorythm: validationAlgorythm,
                                  allSameDigitsAreValid: allSameDigitsAreValid)
-    }
-
-    public static let fazendaAlgorythm: Validator.ValidationAlgorythm =
-    Validator.ValidationAlgorythm.fazenda { (basicNumber: String) -> (Int) in
-        NumberParsedType.calcWeightSum(basicNumber: basicNumber)
     }
 }
