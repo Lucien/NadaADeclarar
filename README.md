@@ -1,5 +1,7 @@
-# Nothing to Declare
-Swift Library for validation and generation of CPF and CNPJ numbers.
+# Nada a Declarar
+Swift Library for validation and generation of CPF and CNPJ numbers 🇧🇷.
+
+![Nada a Declarar](https://github.com/Lucien/NadaADeclarar/assets/382357/d143b5f1-6fcb-4b97-beb7-cc296adc91bb)
 
 # Features
 
@@ -32,6 +34,10 @@ let cpf = CPF.generate()
 ```
 
 Check out more on [Playgrounds](README.playground)
+
+# Badges
+
+[![Swift](https://github.com/Lucien/NadaADeclarar/actions/workflows/swift.yml/badge.svg?branch=master)](https://github.com/Lucien/NadaADeclarar/actions/workflows/swift.yml) [![CodeQL](https://github.com/Lucien/NadaADeclarar/actions/workflows/codeql.yml/badge.svg)](https://github.com/Lucien/NadaADeclarar/actions/workflows/codeql.yml)
 
 # Memes
 ![](https://static.poder360.com.br/2024/03/prismada-irpf-memes-1-15mar2024.png)
