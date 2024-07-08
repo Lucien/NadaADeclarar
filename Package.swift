@@ -11,14 +11,20 @@ let package = Package(
             name: "NadaADeclarar",
             targets: ["NadaADeclarar"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/realm/SwiftLint.git", from: .init(0, 55, 0))
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "NadaADeclarar"),
+            name: "NadaADeclarar",
+            plugins: [
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
+            ]),
         .testTarget(
             name: "NadaADeclararTests",
             dependencies: ["NadaADeclarar"],
-            resources: [.process("Resources")])
+            resources: [.process("Resources")]),
     ]
 )
