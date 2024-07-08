@@ -139,9 +139,9 @@ public struct Parser {
         }
 
         var offset = 0
-        for i in 0..<separators.count {
-            offset += steps[i] + (i == 0 ? 0 : 1)
-            let separator = separators[i]
+        for index in 0..<separators.count {
+            offset += steps[index] + (index == 0 ? 0 : 1)
+            let separator = separators[index]
 
             let location = number.index(number.startIndex, offsetBy: offset)
             number.insert(separator, at: location)
@@ -182,15 +182,15 @@ extension Parser.Info: Hashable {
         hasher.combine(plainNumber)
         hasher.combine(maskedNumber)
         let checkDigitsHashValue = checkDigits.reduce(5_381) {
-            return ($0 << 5) &+ $0 &+ Int($1)
+            ($0 << 5) &+ $0 &+ Int($1)
         }
         hasher.combine(checkDigitsHashValue)
     }
 
     static func == (lhs: Parser.Info, rhs: Parser.Info) -> Bool {
-        return (lhs.plainNumber == rhs.plainNumber &&
-                lhs.maskedNumber == rhs.maskedNumber &&
-                lhs.checkDigits == rhs.checkDigits &&
-                lhs.parts == rhs.parts)
+        lhs.plainNumber == rhs.plainNumber &&
+        lhs.maskedNumber == rhs.maskedNumber &&
+        lhs.checkDigits == rhs.checkDigits &&
+        lhs.parts == rhs.parts
     }
 }

@@ -102,9 +102,10 @@ public struct CPF: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoInt
      - allSameDigitsAreValid: A flag indicating whether a CPF with all same digits is valid. Defaults to `false`.
      - Returns: `true` if the CPF is valid, `false` otherwise.
      */
-    func isValid(validationAlgorythm: Validator.ValidationAlgorythm = .simple,
-                        allSameDigitsAreValid: Bool = false) -> Bool {
-        return validator.isValid(validationAlgorythm: validationAlgorythm,
-                                 allSameDigitsAreValid: allSameDigitsAreValid)
+    func isValid(
+        validationAlgorythm: Validator.ValidationAlgorythm = .simple,
+        allSameDigitsAreValid: Bool = false
+    ) -> Bool {
+        validator.isValid(validationAlgorythm: validationAlgorythm, allSameDigitsAreValid: allSameDigitsAreValid)
     }
 }

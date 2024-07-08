@@ -4,7 +4,7 @@ import XCTest
 class CPFTests: XCTestCase, ListImporter {
 
     lazy var cpfGroup: Set<CPF>! = {
-        return CPFTests.generatedNumberList()
+        CPFTests.generatedNumberList()
     }()
 
     func testCPFSet() {

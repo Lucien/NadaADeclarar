@@ -30,17 +30,15 @@ extension State: Hashable {
     }
 
     public static func == (lhs: State, rhs: State) -> Bool {
-        return (
-            lhs.initials == rhs.initials &&
-            lhs.name == rhs.name &&
-            lhs.fiscalRegion == rhs.fiscalRegion
-        )
+        lhs.initials == rhs.initials &&
+        lhs.name == rhs.name &&
+        lhs.fiscalRegion == rhs.fiscalRegion
     }
 }
 
 extension State: CustomStringConvertible {
     public var description: String {
-        return "State: \(name) (\(initials)) Fiscal Region: \(fiscalRegion)"
+        "State: \(name) (\(initials)) Fiscal Region: \(fiscalRegion)"
     }
 }
 
