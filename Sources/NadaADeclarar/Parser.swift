@@ -139,9 +139,9 @@ public struct Parser {
         }
 
         var offset = 0
-        for i in 0..<separators.count {
-            offset += steps[i] + (i == 0 ? 0 : 1)
-            let separator = separators[i]
+        for index in 0..<separators.count {
+            offset += steps[index] + (index == 0 ? 0 : 1)
+            let separator = separators[index]
 
             let location = number.index(number.startIndex, offsetBy: offset)
             number.insert(separator, at: location)

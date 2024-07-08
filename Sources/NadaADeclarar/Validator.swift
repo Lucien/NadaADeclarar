@@ -46,9 +46,9 @@ public struct Validator {
         let range = Range(uncheckedBounds: (plainNumber.startIndex, upper: upperBound))
         let basicNumberLength = plainNumber.count - checkDigitsCount
 
-        var v1 = 0
+        var checkDigit1 = 0
         let moduloNumber = 11
-        var v2 = 0
+        var checkDigit2 = 0
         var index = 0
 
         plainNumber.enumerateSubstrings(in: range,
@@ -60,17 +60,17 @@ public struct Validator {
 
             if let enumeratedString = enumeratedString {
                 let number = Int(enumeratedString)! // swiftlint:disable:this force_unwrapping
-                v1 += number * (basicNumberLength - index)
-                v2 += number * (basicNumberLength - (index + 1))
+                checkDigit1 += number * (basicNumberLength - index)
+                checkDigit2 += number * (basicNumberLength - (index + 1))
                 index += 1
             }
         }
 
-        v1 = v1 % moduloNumber % (moduloNumber - 1)
-        v2 += v1 * basicNumberLength
-        v2 = v2 % moduloNumber % (moduloNumber - 1)
+        checkDigit1 = checkDigit1 % moduloNumber % (moduloNumber - 1)
+        checkDigit2 += checkDigit1 * basicNumberLength
+        checkDigit2 = checkDigit2 % moduloNumber % (moduloNumber - 1)
 
-        return numberParsedInfo.checkDigits == [v1, v2]
+        return numberParsedInfo.checkDigits == [checkDigit1, checkDigit2]
     }
 
     /**
@@ -114,13 +114,13 @@ public struct Validator {
         var expectedCheckDigits = [Int]()
         var nextBasicNumber = basicNumber
 
-        for i in 0..<checkDigitsCount {
+        for index in 0..<checkDigitsCount {
             let sum = calculateWeightsSum(nextBasicNumber)
             let remainder = sum % moduloNumber
-            let v = (remainder < 2) ? 0 : moduloNumber - remainder
-            assert(v >= 0 && v < 10, "verification number out of range 0 <= v <= 9")
-            nextBasicNumber.append(String(v))
-            expectedCheckDigits.insert(v, at: i)
+            let verificationNumber = (remainder < 2) ? 0 : moduloNumber - remainder
+            assert(verificationNumber >= 0 && verificationNumber < 10, "verification number out of range 0 <= v <= 9")
+            nextBasicNumber.append(String(verificationNumber))
+            expectedCheckDigits.insert(verificationNumber, at: index)
         }
         return expectedCheckDigits
     }
