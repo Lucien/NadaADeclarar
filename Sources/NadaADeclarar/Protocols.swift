@@ -14,15 +14,15 @@ protocol NumberParsedInfoInterface: Hashable {
 
 extension NumberParsedInfoInterface {
     public var plainNumber: String {
-        return numberParsedInfo.plainNumber
+        numberParsedInfo.plainNumber
     }
 
     public var maskedNumber: String {
-        return numberParsedInfo.maskedNumber
+        numberParsedInfo.maskedNumber
     }
 
     public var checkDigits: [Int] {
-        return numberParsedInfo.checkDigits
+        numberParsedInfo.checkDigits
     }
 
     public func hash(into hasher: inout Hasher) {
@@ -30,6 +30,6 @@ extension NumberParsedInfoInterface {
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.numberParsedInfo == rhs.numberParsedInfo
+        lhs.numberParsedInfo == rhs.numberParsedInfo
     }
 }

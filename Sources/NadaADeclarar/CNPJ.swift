@@ -46,7 +46,7 @@ public struct CNPJ: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoIn
      - Returns: `true` if the CNPJ represents a headquarters; otherwise, `false`.
      */
     public var isHeadquarters: Bool {
-        return branchNumber == "0001"
+        branchNumber == "0001"
     }
 
     /**
@@ -55,7 +55,7 @@ public struct CNPJ: NadaADeclararNumberProtocol, Generatable, NumberParsedInfoIn
      - Returns: A string representing the branch number.
      */
     public var branchNumber: String {
-        return numberParsedInfo.parts.dropLast().last! // swiftlint:disable:this force_unwrapping
+        numberParsedInfo.parts.dropLast().last! // swiftlint:disable:this force_unwrapping
     }
 
     /**
