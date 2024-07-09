@@ -1,7 +1,7 @@
 # Nada a Declarar
 Swift Library for validation and generation of CPF and CNPJ numbers 🇧🇷.
 
-![Nada a Declarar](https://github.com/Lucien/NadaADeclarar/assets/382357/d143b5f1-6fcb-4b97-beb7-cc296adc91bb)
+![NadaADeclarar](https://github.com/Lucien/NadaADeclarar/assets/382357/3e7b23ad-15f9-4a05-8582-3e1a857d36ba)
 
 # Features
 
