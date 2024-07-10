@@ -36,8 +36,3 @@ let cpf = CPF.generate()
 # Badges
 
 [![Swift](https://github.com/Lucien/NadaADeclarar/actions/workflows/swift.yml/badge.svg?branch=master)](https://github.com/Lucien/NadaADeclarar/actions/workflows/swift.yml) [![CodeQL](https://github.com/Lucien/NadaADeclarar/actions/workflows/codeql.yml/badge.svg)](https://github.com/Lucien/NadaADeclarar/actions/workflows/codeql.yml) [![SwiftLint](https://github.com/Lucien/NadaADeclarar/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/Lucien/NadaADeclarar/actions/workflows/swiftlint.yml)
-
-# Memes
-![](https://static.poder360.com.br/2024/03/prismada-irpf-memes-1-15mar2024.png)
-![](https://static.poder360.com.br/2024/03/prismada-irpf-memes-3-15mar2024.png)
-![](https://i.pinimg.com/736x/ce/fd/57/cefd57f6b5e2ac84db7496e3f4c031e2.jpg)
